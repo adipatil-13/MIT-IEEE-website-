@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="shortcut icon" href="static/assets/favcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT IEEE | Conference Schedule</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    .card {
+        width: 90%;
+        /* Adjust the width as needed */
+        max-width: 100%;
+        /* Limit the maximum width */
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        padding: 30px;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        /* height: 93%; */
+    }
+
+    /* .card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+    } */
+
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .details h4 {
+        margin: 0;
+        color: #333;
+        font-size: 20px;
+    }
+
+    .details p {
+        margin: 5px 0;
+        color: #666;
+    }
+
+    .schedule img {
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        color: #48135a;
+        text-align: center;
+        margin-bottom: 20px;
+        text-align: left;
+        font-size: 30px;
+    }
+
+    .highlight {
+        color: #f44336;
+        /* Red color for highlighting */
+    }
+
+    /* Responsive styles */
+    @media only screen and (max-width: 600px) {
+        .card {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+    }
+
+    @media only screen and (max-width: 400px) {
+        .card {
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+    }
+
+    /* only for this page */
+    #section2 {
+        margin: 2%;
+        margin-top: 4rem;
+    }
+</style>
+
+<body>
+
+
+    <nav id="nav">
+        <div class="logo">
+          <a href="#"><img src="static/assets/logo.png" alt="Logo" id="logo"></a>
+          <a href="#"><img src="static/assets/S-1.jpg" alt="Logo" id="e-logo"></a>
+        </div>
+        <div class="menu">
+          <a href="/">Home</a>
+    
+          <div class="dropdown">
+            <button class="dropbtn">About </button>
+            <div class="dropdown-content">
+              <a href="about.html">About Us</a>
+              <a href="leadership.html">Leadership</a>
+            </div>
+          </div>
+    
+          <div class="dropdown">
+            <button class="dropbtn">Information For Authors </button>
+            <div class="dropdown-content">
+              <a href="Call-for-papers.html">Call For Papers</a>
+              <a href="registration.html">Registration</a>
+              <a href="Guidelines_and_Template.html">Guidelines and Template</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Speakers & Events </button>
+            <div class="dropdown-content">
+              <a href="speakers.html">Speakers</a>
+              <a href="Conference_schedule.html">Conference Schedule</a>
+            </div>
+          </div>
+          <a href="committee.html">Committee</a>
+          <a href="contact.html">Contact Us</a>
+    
+        </div>
+      </nav>
+
+    <!-- mobile -->
+    <nav id="mob-nav">
+        <input type="checkbox" id="check">
+        <label class="logo" id="logo"><img src="static/assets/logo-light.png" alt="Logo"></label>
+        <a href="#"><img src="static/assets/S-1.png" alt="Logo" id="e-logom"></a>
+        
+        <label for="check" class="checkbtn" onclick="openNav()">
+          <i class="fas fa-bars"></i>
+        </label>
+        <!-- <div class="logo">
+            <img src="static/assets/logo.png" alt="logo" >
+        </div> -->
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+            <a href="/">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="leadership.html">LEADERSHIP</a>
+            <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+            <a href="registration.html">REGISTRATION</a>
+            <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+            <a href="speakers.html">SPEAKERS</a>
+            <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+            <a href="committee.html">COMMITTEE</a>
+            <a href="contact.html">CONTACT US</a>
+          </div>
+        </div>
+      </nav>
+
+
+    <section id="section2">
+        <div class="card" id="AI-BD">
+            <h1>DAY-1: 25-04-2024 Tutorial Schedule
+            </h1>
+            <div class="details">
+                <!-- <h4>Venue: <span class="highlight">N518</span> MIT School Of Computing (IT Building) </h4> -->
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/Tutorial_Day-1_Schedule.JPG" alt="Schedule Image">
+            </div>
+        </div>
+        <div class="card" id="AI-BD">
+            <h1>DAY-2: 26-04-2024 Plenary Session and Paper Presentation Schedule
+            </h1>
+            <div class="details">
+                <!-- <h4>Venue: <span class="highlight">N518</span> MIT School Of Computing (IT Building) </h4> -->
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/Tutorial_Day-2_Schedule.JPG" alt="Schedule Image">
+            </div>
+        </div>
+        <div class="card" id="AI-BD">
+            <h1>DAY-3: 27-04-2024 Paper Presentation and Valedictory Session Schedule</h1>
+            <div class="details">
+                <!-- <h4>Venue: <span class="highlight">N518</span> MIT School Of Computing (IT Building) </h4> -->
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/Tutorial_Day-3_Schedule.JPG" alt="Schedule Image">
+            </div>
+        </div>
+        <div class="card" id="AI-BD">
+            <h1>Al for Big Data and Data Analytics</h1>
+            <div class="details">
+                <h4>Venue: <span class="highlight">6th Floor - S604</span> MIT School Of Computing (IT Building) </h4>
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/AI_BDA.JPG" alt="Schedule Image">
+            </div>
+        </div>
+        <div class="card" id="AI-SC">
+            <h1>Al for Sustainable Cities</h1>
+            <div class="details">
+                <h4>Venue: <span class="highlight">5th Floor - N509</span> MIT School Of Computing (IT Building) </h4>
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/AI_SLE.JPG" alt="Schedule Image">
+            </div>
+        </div>
+        <div class="card" id="AI-AF">
+            <h1>AI for Agriculture and Food Technology </h1>
+            <div class="details">
+                <h4>Venue: <span class="highlight">5th Floor - N510</span> MIT School Of Computing (IT Building) </h4>
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/AI_AFT.JPG" alt="Schedule Image">
+            </div>
+        </div>
+        <div class="card" id="AI-HL">
+            <h1>AI for Healthcare and Life Science </h1>
+            <div class="details">
+                <h4>Venue: <span class="highlight">5th Floor - N515</span> MIT School Of Computing (IT Building) </h4>
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/AI_HCS.JPG" alt="Schedule Image">
+            </div>
+
+            <!-- space between them -->
+            <br>
+            <div class="details">
+                <h4>Venue: <span class="highlight">5th Floor - N517</span> MIT School Of Computing (IT Building) </h4>
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/AIHCS2.JPG" alt="Schedule Image">
+            </div>
+        </div>
+        <div class="card" id="AI-MV">
+            <h1>AI for Metaverse and Cloud Computing</h1>
+            <div class="details">
+                <h4>Venue: <span class="highlight">6th Floor - Auditorium</span> MIT School Of Computing (IT Building) </h4>
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/AI_MCC.JPG" alt="Schedule Image">
+            </div>
+        </div>
+        <div class="card" id="AI-Ed">
+            <h1>AI for Education</h1>
+            <div class="details">
+                <h4>Venue: <span class="highlight"></span> MIT School Of Computing (IT Building) </h4>
+                <h4>26-04-2024 (Day-2): <span class="highlight">5th Floor - S506</span>  </h4>
+                <h4>27-04-2024 (Day-3): <span class="highlight">6th Floor - S606</span>  </h4>
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/AI_EDU.JPG" alt="Schedule Image">
+            </div>
+        </div>
+        <div class="card" id="AI-BC">
+            <h1>AI for Blockchain and Security</h1>
+            <div class="details">
+                <h4>Venue: <span class="highlight">5th Floor - N518</span> MIT School Of Computing (IT Building) </h4>
+                <!-- Add Date, Time, or other details here if needed -->
+            </div>
+            <div class="schedule">
+                <img src="./static/assets/AI_BCN.jpg" alt="Schedule Image">
+            </div>
+        </div>
+       
+        
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-nav">
+                <a href="/">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="leadership.html">LEADERSHIP</a>
+                <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+                <a href="registration.html">REGISTRATION</a>
+                <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+                <a href="speakers.html">SPEAKERS</a>
+                <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+                <a href="committee.html">COMMITTEE</a>
+                <a href="contact.html">CONTACT US</a> 
+            </div>
+            <br>
+            <br>
+            <div class="social-icons">
+                <a href="https://m.facebook.com/story.php?story_fbid=pfbid02LKfmkhkkkiyaJ1hxqwT4awjvSnx9Eyiam3UnXiSRPryu4yanMxX4rJfMdgm6WfWCl&id=100066361166737"
+                    target="_blank" class="fab fa-facebook"></a>
+                <a href="https://www.instagram.com/p/C1tq2D0BF3_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA"
+                    target="_blank" class="fab fa-instagram"></a>
+                <!-- <a href="#" target="_blank" class="fab fa-youtube"></a> -->
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7148968998427168769" target="_blank"
+                    class="fab fa-linkedin"></a>
+                <a href="https://x.com/mitadtpune/status/1743205664011456687?s=20" target="_blank"
+                    class="fab fa-twitter"></a>
+            </div>
+
+            <h3>MIT Art, Design and Technology University</h3><br>
+            <p>Copyright &copy; 2024 Mitadtsocicon - All Rights Reserved.</p>
+    </footer>
+
+
+<script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+
+</body>
+</html>

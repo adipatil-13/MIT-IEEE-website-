@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="shortcut icon" href="static/assets/favcon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIT IEEE</title>
+  <style>
+    @media only screen and (max-width: 600px) {
+      #section {
+        margin-top: 12rem !important;
+      }
+
+      .container {
+        display: block !important;
+      }
+
+      .image {
+        aspect-ratio: 2/1 !important;
+      }
+
+      .text {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media only screen and (min-width: 600px) {
+      /* #section {
+        margin-top: 15rem !important;
+      } */
+
+      .container {
+        display: block !important;
+      }
+
+      .image {
+        aspect-ratio: 2/1 !important;
+      }
+
+      .text {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media only screen and (min-width: 1520px) {
+      .container {
+        display: flex !important;
+      }
+
+      .image {
+        aspect-ratio: 3/1 !important;
+      }
+
+      .text {
+        margin: 0 !important;
+      }
+    }
+
+
+    h1 {
+      color: var(--main-theme);
+      font-size: 32px;
+    }
+
+    .container {
+      /* margin-top: 5rem; */
+      display: flex;
+      justify-content: space-around;
+      gap: 2%;
+      margin-bottom: 3rem;
+      /* background-color: aqua; */
+    }
+
+    .img-div {
+      border-radius: 20px;
+      flex-basis: 60%;
+      overflow: hidden;
+      background-color: var(--light-2);
+    }
+
+    .no-img {
+      flex-basis: 100% !important;
+    }
+
+    .image {
+      object-fit: cover;
+      width: 100%;
+      /* max-height: 500px; */
+      height: 120%;
+      flex-basis: 50%;
+      aspect-ratio: 3/1;
+    }
+
+    .text {
+      flex-basis: 45%;
+      background-color: var(--light-2);
+      border-radius: 20px;
+      padding: 2% 2.5%;
+    }
+
+    .p {
+      text-align: justify;
+      font-weight: 500;
+      /* word-spacing: 2px; */
+      /* letter-spacing: 2px; */
+      line-height: 150%;
+    }
+
+    
+  </style>
+  
+</head>
+
+<body>
+
+  <nav id="nav">
+    <div class="logo">
+      <a href="#"><img src="static/assets/logo.png" alt="Logo" id="logo"></a>
+      <a href="#"><img src="static/assets/S-1.jpg" alt="Logo" id="e-logo"></a>
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">About </button>
+        <div class="dropdown-content">
+          <a href="about.html">About Us</a>
+          <a href="leadership.html">Leadership</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Information For Authors </button>
+        <div class="dropdown-content">
+          <a href="Call-for-papers.html">Call For Papers</a>
+          <a href="registration.html">Registration</a>
+          <a href="Guidelines_and_Template.html">Guidelines and Template</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Speakers & Events </button>
+        <div class="dropdown-content">
+          <a href="speakers.html">Speakers</a>
+          <a href="Conference_schedule.html">Conference Schedule</a>
+        </div>
+      </div>
+      <a href="committee.html">Committee</a>
+      <a href="contact.html">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- mobile -->
+  <nav id="mob-nav">
+    <input type="checkbox" id="check">
+    <label class="logo" id="logo"><img src="static/assets/logo-light.png" alt="Logo"></label>
+    <a href="#"><img src="static/assets/S-1.png" alt="Logo" id="e-logom"></a>
+    
+    <label for="check" class="checkbtn" onclick="openNav()">
+      <i class="fas fa-bars"></i>
+    </label>
+    <!-- <div class="logo">
+        <img src="static/assets/logo.png" alt="logo" >
+    </div> -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <div id="section">
+
+    <h1>About MIT Art, Design and Technology University</h1>
+    <div class="line"></div>
+    <div class="container">
+      <div class="img-div">
+        <img class="image"
+          src="https://www.collegebatch.com/static/clg-gallery/mit-art-design-technology-university-pune-225520.jpg">
+      </div>
+      <div class="text">
+
+        <p class="p">MIT Art, Design and Technology University (MIT ADT University) is a place where creativity and
+          innovation
+          coexist.
+          MIT ADT has been established under the prestigious flagship of MIT Group of Institutions.
+          It is a UGC recognized multidisciplinary University and has been bestowed with the ‘Best Campus Award’ by
+          ASSOCHAM.<br> <br>
+          MIT ADT spans across a vast green stretch of 125 acres of land at Vishwaraj Baugh Loni, Kalbhor, Pune.
+          One of the most distinctive features of this land is that it was previously owned by the late Shree Raj
+          Kapoor,
+          a celebrated Bollywood actor.<br> <br>
+          MIT ADT offers multiple courses at undergraduate, postgraduate, and Doctorate levels in Fine Art Design,
+          Management, Marine engineering,
+          Bioscience Engineering, Food Technology, Film, and Television as well as Broadcasting and journalism.
+          <br> <br> All of these programs have been crafted in sync with the present industry standards.
+          5000+ new students get enrolled in these varied courses every year.
+          The strength of the university at present is of 8400+ students, and the numbers are increasing by the day.
+        </p>
+        <button class="btn" style="margin-top: 2%;" onclick="window.open('https://mituniversity.ac.in/')">MIT ADT
+          University</button>
+      </div>
+    </div>
+
+    <h1>About MIT School of Computing</h1>
+    <div class="line"></div>
+    <div class="container">
+      <div class="img-div">
+        <img class="image" src="https://mituniversity.ac.in/assets_web/images/FES/IT_Building2.jpg">
+      </div>
+      <div class="text">
+        <p class="p">MIT School of Computing has a goal to find solutions to the greatest technological and social
+          problems of the
+          21st century with the latest and best technological tools and techniques of the emerging computing paradigms
+          and
+          architectures. <br> <br> The students here are trained to become future leaders who will have the capability
+          to lead
+          giant
+          organizations in the emerging corporate landscape. <br> <br> MIT SOC is dedicated to providing students with
+          real-world
+          and practical academic exposure that will transform them into successful professionals. <br> <br> MIT School
+          of
+          Computing
+          is motivated by the vision of the late & respected President of India Dr. APJ Abdul Kalam. His vision of India
+          2020 – A Vision For a New Millennium empowers us to produce quality engineers who will satisfy the demand for
+          talented manpower in the country.</p>
+        <button class="btn" style="margin-top: 2%;"
+          onclick="window.open('https://mituniversity.ac.in/academics/faculty/faculty-of-engineering/school-of-computing/mit-school-of-computing/')">MIT
+          ADT School of Computing</button>
+      </div>
+
+    </div>
+
+
+    <h1>About IEEE Pune Section</h1>
+    <div class="line"></div>
+    <div class="container">
+      <!-- <div class="img-div">
+        <img class="image" src="static/assets/IEEE_logo.png" style="width: 90% !important;height: 100% !important;">
+      </div> -->
+      <div class="text no-img">
+        <p class="p">IEEE Pune Section serves as a larger community that houses IEEE Members from all the colleges at
+          Pune which
+          have IEEE Student Branches at their institutes. <br> <br> It has several chapters such as Communications,
+          Computer,
+          Education, Instrumentation & Measurement, Joint PES/IAS, Signal Processing.
+        </p>
+        <button class="btn" style="margin-top: 2%;" onclick="window.open('https://ieeepunesection.org/')">IEEE Pune
+          Section</button>
+      </div>
+    </div>
+
+
+    <h1>About IEEE Student-Branch MIT ADT</h1>
+    <div class="line"></div>
+    <div class="container">
+      <div class="img-div">
+        <img class="image"
+          src="https://img1.wsimg.com/isteam/ip/92541e6f-4944-493d-9e58-901009031d81/14e75c_85db2e40a3974e529217520c9f9444bc_mv2.jpeg/:/cr=t:0%25,l:18.18%25,w:63.64%25,h:100%25/rs=w:600,h:300,cg:true">
+      </div>
+      <div class="text">
+        <p class="p">IEEE Student Branch of MIT ADT University, Pune established in 2019 provides new opportunities to
+          its
+          students
+          with proper guidance by experts from different fields and industries. <br> <br> It plans events and seminars
+          throughout
+          the year with industry-leading experts sharing knowledge on various topics.
+        </p>
+        <button class="btn" style="margin-top: 2%;" onclick="window.open('https://edu.ieee.org/in-mitadtu/')">IEEE
+          Student-Branch MIT
+          ADT</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-nav">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a>
+      </div>
+      <br>
+      <br>
+      <div class="social-icons">
+        <a href="https://m.facebook.com/story.php?story_fbid=pfbid02LKfmkhkkkiyaJ1hxqwT4awjvSnx9Eyiam3UnXiSRPryu4yanMxX4rJfMdgm6WfWCl&id=100066361166737"
+          target="_blank" class="fab fa-facebook"></a>
+        <a href="https://www.instagram.com/p/C1tq2D0BF3_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA"
+          target="_blank" class="fab fa-instagram"></a>
+        <!-- <a href="#" target="_blank" class="fab fa-youtube"></a> -->
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7148968998427168769" target="_blank"
+          class="fab fa-linkedin"></a>
+        <a href="https://x.com/mitadtpune/status/1743205664011456687?s=20" target="_blank" class="fab fa-twitter"></a>
+      </div>
+
+      <h3>MIT Art, Design and Technology University</h3><br>
+      <p>Copyright &copy; 2024 Mitadtsocicon - All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+
+ 
+</body>
+
+</html>

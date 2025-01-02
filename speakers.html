@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="static/assets/favcon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers</title>
+</head>
+
+<body>
+
+    <!-- StyleSheet -->
+
+    <style>
+        @media only screen and (max-width: 650px) {
+            .s-left {
+                width: 100% !important;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .c1 {
+                width: 100% !important;
+            }
+        }
+
+        @media only screen and (max-width: 906px) {
+            .s-left {
+                width: 100% !important;
+            }
+
+            .c1 {
+                width: 50%;
+            }
+
+            #hidden-c {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 1100px) {
+
+            .s-sub-card {
+                flex-direction: column;
+            }
+
+            .s-left {
+                padding-bottom: 20px;
+                margin: auto;
+                width: 50%;
+            }
+
+            .s-body {
+                height: auto !important;
+            }
+
+            .mid-sec {
+                flex-direction: column-reverse;
+            }
+
+            .ml {
+                font-size: 15px;
+            }
+
+            .dn {
+                font-size: smaller !important;
+                text-align: justify !important;
+            }
+
+            .sc {
+                padding-bottom: 20px;
+            }
+
+            /* 
+            #hidden-c{
+                display: none;
+            } */
+        }
+
+        @media only screen and (max-width: 1300px) {
+
+            .s-left {
+                height: 15rem !important;
+            }
+        }
+
+        .c1 {
+            width: 29%;
+        }
+
+        .s-card {
+            background-color: var(--light-2);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 5% 0.5%;
+        }
+
+        .s-sub-card {
+            display: flex;
+            gap: 2%;
+        }
+
+        .s-left {
+            flex-basis: calc(100% / 4.2);
+            border-radius: 16px;
+            overflow: hidden;
+            /* height: 40vh; */
+        }
+
+        .s-head {
+            font-size: xx-large;
+            color: var(--main-theme);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .name {
+            color: var(--main-theme);
+            font-size: xx-large;
+            margin-bottom: -5px;
+        }
+
+        .s-left img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .s-right {
+            background-color: var(--main-bg-light);
+            border-radius: 16px;
+            flex: 1;
+            display: flex;
+        }
+
+        .dt {
+            font-size: large;
+            /* text-align: center; */
+            color: var(--light-1);
+        }
+
+        .des {
+            margin: auto;
+            width: 100%;
+            color: var(--main-theme);
+        }
+
+        .ml {
+            font-size: medium;
+            color: #135683;
+            text-align: center;
+        }
+
+        .dn {
+            margin: auto;
+            width: 95%;
+            text-align: justify;
+            /* text-align: center; */
+        }
+
+        .mdn {
+            font-size: small;
+        }
+
+        .st-dt {
+            display: flex;
+            justify-content: center;
+        }
+
+        .sc {
+            margin-bottom: 2%;
+        }
+
+        .s-body {
+            padding: 2%;
+            text-align: center;
+            justify-content: space-around;
+            /* height: 40vh; */
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+
+
+        /* Three columns side by side */
+        .column {
+            /* float: left; */
+            /* width: calc(100% / 3.2); */
+            /* margin-bottom: 16px; */
+            /* padding: 0 8px; */
+            flex: 1 1 30%;
+            padding: 0 10px;
+            margin-bottom: 50px;
+        }
+
+        .column:nth-child(3n+1) {
+            clear: both;
+        }
+
+        /* Display the columns below each other instead of side by side on small screens */
+        /* @media screen and (max-width: 880px) {
+            .column {
+                width: calc(100% / 2.2);
+                display: block;
+            }
+        } */
+
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+
+            #hidden-c {
+                display: none;
+            }
+        }
+
+        /* Add some shadows to create a card effect */
+        .card {
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+            height: 96%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+        }
+
+        /* Some left and right padding inside the container */
+        .container {
+            padding: 0 16px;
+            flex-grow: 3;
+        }
+
+        .img-card {
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        .img-card img {
+            width: 220px;
+            height: 250px;
+        }
+
+        /* Clear floats */
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            width: 100%;
+            font-weight: 600;
+            font-size: large;
+            top: 0;
+        }
+
+        .button-title {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            /* color: #116A7B; */
+            color: purple;
+            text-align: center;
+            width: 100%;
+            font-weight: 600;
+            font-size: 25px;
+            top: 0;
+        }
+
+        /* p for cards */
+        .container p {
+            text-align: justify;
+            font-family: math;
+        }
+
+        .title-c {
+            padding-bottom: 16px;
+            color: purple;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+
+        .img-card1 {
+            width: 15px;
+            height: 10px;
+        }
+
+        /* .button:hover {
+            background-color: #555;
+        } */
+
+
+        /* Test */
+
+        /* input {
+            opacity: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        p {
+            display: -webkit-box;
+            -webkit-line-clamp: 10;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        input:focus~label {
+            outline: -webkit-focus-ring-color auto 5px;
+        }
+
+        input:checked+p {
+            -webkit-line-clamp: unset;
+        }
+
+        input:checked~label,
+        p:not(.truncated)~label {
+            display: none;
+            color: var(--light-1);
+        } */
+        .button-50 {
+            appearance: button;
+            background-color: #f8ea2a;
+            background-image: none;
+            border: 1px solid #000;
+            border-radius: 4px;
+            box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+            box-sizing: border-box;
+            color: #000;
+            cursor: pointer;
+            display: inline-block;
+            font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0 5px 10px 0;
+            overflow: visible;
+            padding: 12px 40px;
+            text-align: center;
+            text-transform: none;
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .button-50:focus {
+            text-decoration: none;
+        }
+
+        .button-50:hover {
+            text-decoration: none;
+        }
+
+        .button-50:active {
+            box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+            outline: 0;
+        }
+
+        .button-50:not([disabled]):active {
+            box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+            transform: translate(2px, 2px);
+        }
+
+        @media (min-width: 768px) {
+            .button-50 {
+                padding: 12px 50px;
+            }
+        }
+
+        .c3 {
+            width: 30%;
+        }
+
+        @media (max-width: 922px) {
+            .c3 {
+                width: 100% !important;
+            }
+        }
+    </style>
+
+    <!-- Nav bar -->
+
+    <nav id="nav">
+        <div class="logo">
+            <a href="#"><img src="static/assets/logo.png" alt="Logo" id="logo"></a>
+            <a href="#"><img src="static/assets/S-1.jpg" alt="Logo" id="e-logo"></a>
+        </div>
+        <div class="menu">
+            <a href="/">Home</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">About </button>
+                <div class="dropdown-content">
+                    <a href="about.html">About Us</a>
+                    <a href="leadership.html">Leadership</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Information For Authors </button>
+                <div class="dropdown-content">
+                    <a href="Call-for-papers.html">Call For Papers</a>
+                    <a href="registration.html">Registration</a>
+                    <a href="Guidelines_and_Template.html">Guidelines and Template</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Speakers & Events </button>
+                <div class="dropdown-content">
+                    <a href="speakers.html">Speakers</a>
+                    <a href="Conference_schedule.html">Conference Schedule</a>
+                </div>
+            </div>
+            <a href="committee.html">Committee</a>
+            <a href="contact.html">Contact Us</a>
+
+        </div>
+    </nav>
+
+    <!-- mobile -->
+    <nav id="mob-nav">
+        <input type="checkbox" id="check">
+        <label class="logo" id="logo"><img src="static/assets/logo-light.png" alt="Logo"></label>
+        <a href="#"><img src="static/assets/S-1.png" alt="Logo" id="e-logom"></a>
+
+        <label for="check" class="checkbtn" onclick="openNav()">
+            <i class="fas fa-bars"></i>
+        </label>
+        <!-- <div class="logo">
+            <img src="static/assets/logo.png" alt="logo" >
+        </div> -->
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="/">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="leadership.html">LEADERSHIP</a>
+                <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+                <a href="registration.html">REGISTRATION</a>
+                <a href="speakers.html">SPEAKERS</a>
+                <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+                <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+                <a href="committee.html">COMMITTEE</a>
+                <a href="contact.html">CONTACT US</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Section -->
+
+    <section id="section">
+
+        <h2 class="heading">Chief Guest</h2>
+        <div class="line"></div>
+
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="title-c"></div><br><br>
+                    <div class="img-card"><img src="static/assets/venkateshR.jpg" alt="Dr. Venkatesh R"></div>
+                    <div class="container">
+                        <h2>Dr. Venkatesh R</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;">Chief Scientist<br> TCS Mumbai</h2>
+                        <p>Dr. Nilesh has worked as DBT fellow in epilepsy surgery at AIIMS.
+                            He has received various fellowships like AASAN ambassador, Sherry Apple Resident, Travel
+                            fellowship etc. He has received various research paper awards. He is a life member of Indian
+                            Epilepsy Society, Neurosurgical society of India, and Trauma Society of India.</p>
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+
+                </div>
+
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+            <div class="column" style="transform: scale(0);" id="hidden-c">
+                <div class="card">
+                    <div class="img-card">
+                        <img src="static/assets/nibu.PNG" alt="Mr. Nibu John Thomas">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Nibu John Thomas</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> IIT Madras | Gamification- AI- Metaverse
+                            | Trainer- Researcher-
+                            Consultant
+                        </h2>
+
+                        <p>Dr. Nibu John Thomas is a passionate professional who works at the intersection of
+                            Technology, Management, and Psychology, focusing on Human Resource Development,
+                            Organizational Behavior, and Human-Computer Interactions. He also received the esteemed
+                            ‘Academy of Management Award’ in 2022. He is also a trainer for multiple programs at IIT
+                            Madras and IITM Research Park.</p>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+            <div class="column" style="transform: scale(0);" id="hidden-c">
+                <div class="card">
+                    <div class="img-card">
+                        <img src="static/assets/nibu.PNG" alt="Mr. Nibu John Thomas">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Nibu John Thomas</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> IIT Madras | Gamification- AI- Metaverse
+                            | Trainer- Researcher-
+                            Consultant
+                        </h2>
+
+                        <p>Dr. Nibu John Thomas is a passionate professional who works at the intersection of
+                            Technology, Management, and Psychology, focusing on Human Resource Development,
+                            Organizational Behavior, and Human-Computer Interactions. He also received the esteemed
+                            ‘Academy of Management Award’ in 2022. He is also a trainer for multiple programs at IIT
+                            Madras and IITM Research Park.</p>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+
+        </div>
+
+        <h2 class="heading">Guest Of Honor</h2>
+        <div class="line"></div>
+
+        <div class="row">
+
+            <div class="column">
+                <div class="card">
+                    <div class="title-c"></div><br> <br>
+                    <div class="img-card"><img src="static/assets/Unnat.jpg" alt="Prof. Dr Unnat P Pandit"></div>
+                    <div class="container">
+                        <h2>Prof. Dr. Unnat P. Pandit</h2>
+
+                        <h2 class="s-text ml" style="font-size: smaller;"> Controller General of Patents <br> Designs &
+                            Trade Marks (CGPDTM),<br> New Delhi </h2>
+
+                        <p>Prof Pandit is appointed as the Controller General of Patents, Designs and Trademarks
+                            (CGPDTM) by the Govt of India. Prof Pandit previously served as Program Director of Atal
+                            Innovation Mission at NITI Aayog-GoI.</p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="title-c">Emerging Research Opportunities in Healthcare Technology</div>
+                    <div class="img-card"><img src="static/assets/nilesh.PNG" alt="Dr. Nilesh"></div>
+                    <div class="container">
+                        <h2>Dr. Nilesh Kurwale</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> Epilepsy Surgeon,<br>
+                            Coordinator for Bajaj Allianz Centre for Epilepsy,<br>
+                            Deenanath Mangeshkar Hospital, Pune<br>
+                            Director for Bajaj Neuroscience Laboratory.</h2>
+                        <p>Dr. Nilesh has worked as DBT fellow in epilepsy surgery at AIIMS.
+                            He has received various fellowships like AASAN ambassador, Sherry Apple Resident, Travel
+                            fellowship etc. He has received various research paper awards. He is a life member of Indian
+                            Epilepsy Society, Neurosurgical society of India, and Trauma Society of India.</p>
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+
+                </div>
+
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+
+            <!-- <div class="column">
+                <div class="card">
+                    <div class="title-c">Emerging Research Opportunities in Healthcare Technology</div>
+                    <div class="img-card"><img src="static/assets/nilesh.PNG" alt="Dr. Nilesh"></div>
+                    <div class="container">
+                        <h2>Dr Nilesh Kurwale</h2>
+
+                        <h2 class="s-text ml" style="font-size: smaller;"> Epilepsy Surgeon,<br>
+                            Coordinator for Bajaj Allianz Centre for Epilepsy,<br>
+                            Deenanath Mangeshkar Hospital, Pune<br>
+                            Director for Bajaj Neuroscience Laboratory.</h2>
+                        <p>Dr. Nilesh has worked as DBT fellow in epilepsy surgery at AIIMS.
+                            He has received various fellowships like AASAN ambassador, Sherry Apple Resident, Travel
+                            fellowship etc. He has received various research paper awards. He is a life member of Indian
+                            Epilepsy Society, Neurosurgical society of India, and Trauma Society of India.</p>
+
+
+                    </div>
+
+                </div>
+
+            </div> -->
+
+            <div class="column" style="transform: scale(0);" id="hidden-c">
+                <div class="card">
+                    <div class="img-card">
+                        <img src="static/assets/nibu.PNG" alt="Mr. Nibu John Thomas">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Nibu John Thomas</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> IIT Madras | Gamification- AI- Metaverse
+                            | Trainer- Researcher-
+                            Consultant
+                        </h2>
+
+                        <p>Dr. Nibu John Thomas is a passionate professional who works at the intersection of
+                            Technology, Management, and Psychology, focusing on Human Resource Development,
+                            Organizational Behavior, and Human-Computer Interactions. He also received the esteemed
+                            ‘Academy of Management Award’ in 2022. He is also a trainer for multiple programs at IIT
+                            Madras and IITM Research Park.</p>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+
+
+
+    </section>
+
+    <section id="section">
+
+        <h2 class="heading">Plenary Speakers</h2>
+        <div class="line"></div>
+
+
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="title-c">Blockchain based Federated Learning</div><br>
+                    <div class="img-card">
+                        <img src="static/assets/rajesh.PNG" alt="Mr. Kaushal Sharma">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Rajesh Ingle</h2>
+                        <!-- <p class="title dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;">Professor, Dean (Academics) & HOD CSE<br>
+                            IIIT Naya Raipur </h2>
+
+                        <p>Dr. Rajesh Ingle is a distinguished professional serving as the Dean (Academics), Head of the
+                            Department (CSE), and Professor at IIIT-NR. Dr. Ingle was honored with the 2014 IEEE
+                            Outstanding Branch Counselor Award from IEEE, USA, and the 2019 IEEE Region 10 Outstanding
+                            Volunteer Award for his exceptional contributions and services to IEEE Pune Section and IEEE
+                            Region 10.</p>
+
+
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="title-c">Role of AI in Metaverse</div>
+                    <div class="img-card">
+                        <img src="static/assets/nibu.PNG" alt="Mr. Nibu John Thomas">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Nibu John Thomas</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> IIT Madras <br> Gamification- AI- Metaverse
+                            <br>
+                            Trainer- Researcher-
+                            Consultant
+                        </h2>
+
+                        <p>Dr. Nibu John Thomas is a passionate professional who works at the intersection of
+                            Technology, Management, and Psychology, focusing on Human Resource Development,
+                            Organizational Behavior, and Human-Computer Interactions. He also received the esteemed
+                            ‘Academy of Management Award’ in 2022. He is also a trainer for multiple programs at IIT
+                            Madras and IITM Research Park.</p>
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="title-c">Leveraging recent advances in
+                        AI for Sustainable Smart Cities</div>
+                    <div class="img-card">
+                        <img src="static/assets/shyam.jpg" alt="Mr. Shyam Kerkar">
+                    </div>
+                    <div class="container">
+                        <h2>Mr. Shyam Kerkar</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> Head- India, Analytics and Insigths
+                            Tata Consultancy Services, Pune
+                        </h2>
+
+                        <p>25+ years of diverse experience in TCS, leading service line, strategy, marketing and
+                            solutions across Data, Technology applications, IT Infrastructure and Business Processes
+                        </p>
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="title-c">Agriculture and AI</div>
+                    <div class="img-card">
+                        <img src="static/assets/vahida.jpg" alt="Dr. Vahida Attar">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Vahida Attar</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> Dean,
+                            School of Computational Sciences
+                            COEP Technological University
+                        </h2>
+
+                        <p>Dr. Vahida Z. Attar is Dean, School of Computational Sciences at COEP Technological
+                            University and Head, Center of Excellence for Data Science and Machine Learning. She has
+                            more than 25 years of teaching and 10 years of industry and research experience, handling
+                            academic and administrative responsibilities. She is the Senior Member of IEEE, member of
+                            IET and Life Member of IE, ISTE, and CSI. Currently working on DST and Govt. of Maharashtra,
+                            research Projects of AI in Agriculture domain.
+                        </p>
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+
+            <div class="column" style="transform: scale(0);" id="hidden-c">
+                <div class="card">
+                    <div class="img-card">
+                        <img src="static/assets/nibu.PNG" alt="Mr. Nibu John Thomas">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Nibu John Thomas</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> IIT Madras | Gamification- AI- Metaverse
+                            | Trainer- Researcher-
+                            Consultant
+                        </h2>
+
+                        <p>Dr. Nibu John Thomas is a passionate professional who works at the intersection of
+                            Technology, Management, and Psychology, focusing on Human Resource Development,
+                            Organizational Behavior, and Human-Computer Interactions. He also received the esteemed
+                            ‘Academy of Management Award’ in 2022. He is also a trainer for multiple programs at IIT
+                            Madras and IITM Research Park.</p>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+
+            <div class="column" style="transform: scale(0);" id="hidden-c">
+                <div class="card">
+                    <div class="img-card">
+                        <img src="static/assets/nibu.PNG" alt="Mr. Nibu John Thomas">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Nibu John Thomas</h2>
+                        <!-- <p class="s-text dt">26-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> IIT Madras | Gamification- AI- Metaverse
+                            | Trainer- Researcher-
+                            Consultant
+                        </h2>
+
+                        <p>Dr. Nibu John Thomas is a passionate professional who works at the intersection of
+                            Technology, Management, and Psychology, focusing on Human Resource Development,
+                            Organizational Behavior, and Human-Computer Interactions. He also received the esteemed
+                            ‘Academy of Management Award’ in 2022. He is also a trainer for multiple programs at IIT
+                            Madras and IITM Research Park.</p>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <!-- <p><button class="button">Contact</button></p> -->
+            </div>
+
+
+    </section>
+
+
+
+    <section id="section">
+
+        <h2 class="heading">Tutorial Speakers</h2>
+        <div class="line"></div>
+
+        <!-- <p><button class="button-title">AI in Healthcare</button></p> -->
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="title-c">AI for Psychological Assessments</div>
+                    <div class="img-card"><img src="static/assets/shivnarayan.jpg" alt="Dr. Shivnarayan Khandre"></div>
+                    <div class="container">
+                        <h2>Dr. Shivnarayan Khandre</h2>
+                        <!-- <p class="title dt">25-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> Founder & Director <br>Divine Life
+                            Counseling Clinic, Pune<br> Clinical
+                            and Senior Psychologist @ Inamdar Multispecialty Hospital.<br> Expert in
+                            psychological, neurological assessments, and cognitive behavioral therapy. </h2>
+
+                        <p>Dr. Shivnarayan Khandre is an avid learner with an impressive skill set. He offers individual
+                            and group counseling, psychological and neurological assessments, and cognitive behavioral
+                            therapy. He is a motivational speaker and spiritual guide to help his clients achieve their
+                            goals. Worked as senior psychologist at Nityanand Psychiatric & Addiction Rehabilitation
+                            Centre.</p>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <button class="button">April 25 2024 | 10 AM</button>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="title-c"> Epilepsy Myths and Facts</div>
+                    <div class="img-card">
+                        <img src="static/assets/sujit.jpg" alt="Dr Sujit Jagtap">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Sujit Jagtap</h2>
+                        <!-- <p class="title dt">25-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> MD (Pediatrics), DM (Neurology)<br>
+                            Fellowship in Epilepsy (SCTIMST)<br>
+                            WFS-certified consultant in Sleep Medicine<br>
+                            Consultant Pediatric and Adult Neurologist and Epileptologist<br>
+                            Deenanath Mangeshkar Hospital, Pune.</h2>
+
+                        <p>His areas of interest are Epilepsy, Movement Disorder and autoimmune encephalitis.He
+                            completed IAN-AINA Fellowship in 2019 and San Servo Epilepsy fellowship in 2019.He was
+                            awarded 1st Prize for best paper on Epilepsy at National Conference of Indian Academy of
+                            Neurology. He has over 50 publications in national and international journals.</p>
+                        <br>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <button class="button">April 25 2024 |
+                    11 AM</button>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="title-c"> Ayurveda practices</div>
+                    <div class="img-card">
+                        <img src="static/assets/harish.jpg" alt="harish">
+                    </div>
+                    <div class="container">
+                        <h2>Dr. Harish Patankar</h2>
+                        <!-- <p class="title dt">25-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;">Ayurvedacharya, Nadee Tadnya
+                            Keshayurved
+                            Hair & Skin Care Pvt.Ltd.</h2>
+
+                        <p>Dr. Harish Patankar is a well-known Ayurveda practitioner in Russia and India. Chief
+                            Consultant at Aarogyavardhini Chikitsalaya,Pune. Renowned Nadee Tadnya, Well known Yoga
+                            Teacher, Well versed Sanskrit Teacher. </p>
+                        <br><br><br><br><br><br>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <button class="button">April 25 2024 |
+                    2 PM</button>
+            </div>
+
+
+            <p style="width: 100%;"><button class="button-title">Using AI and IoT tools / Technologies for Unmanned
+                    Aircraft Systems (UAS) / Drone Domain</button></p>
+            <div class="column">
+                <div class="card">
+                    <!-- <div class="title-c">Using AI and IoT tools/ technologies for Unmanned Aircraft Systems (UAS) / Drone  Domain</div> -->
+                    <div class="img-card">
+                        <img src="static/assets/kaushal.jpg" alt="Mr. Kaushal Sharma">
+                    </div>
+                    <div class="container">
+                        <h2>Mr. Kaushal Sharma</h2>
+                        <!-- <p class="title dt">25-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> Joint Director, C-DAC Pune </h2>
+
+                        <p>Mr. Kaushal Sharma​ Joint Director @C-DAC Pune | Chief Investigator-UAS / Drone Project|
+                            Member of the BIS panel "LITDC/P 8 Metaverse“ Currently serving as Joint Director at the
+                            Centre for Development of Advanced Computing (C-DAC), which is a scientific society
+                            operating under the Ministry of Electronics & Information Technology of the Government of
+                            India.</p>
+                        <br><br>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <button class="button">April 25 2024 |
+                    10 AM</button>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <!-- <div class="title-c">Using AI and IoT tools/ technologies for Unmanned Aircraft Systems (UAS) / Drone  Domain</div> -->
+                    <div class="img-card">
+                        <img src="static/assets/aaditya.jpg" alt="Mr. Aaditya Dilip Khapare">
+                    </div>
+                    <div class="container">
+                        <h2>Mr. Aaditya Dilip Khapare</h2>
+                        <!-- <p class="title dt">25-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> Project Engineer @C-DAC Pune <br> Research &
+                            development-UAS/ Drone
+                            Project and IoT Certified </h2>
+
+                        <p>Mr. Aaditya Khapare​ Project Engineer @C-DAC Pune | Research & development-UAS/ Drone Project
+                            and Microsoft IoT Certified | Currently serving as Project Engineer at the Centre for
+                            Development of Advanced Computing (C-DAC), which is a scientific society operating under the
+                            Ministry of Electronics & Information Technology of the Government of India.</p>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <button class="button">April 25 2024 |
+                    10 AM</button>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <!-- <div class="title-c">Using AI and IoT tools/ technologies for Unmanned Aircraft Systems (UAS) / Drone  Domain</div> -->
+                    <div class="img-card">
+                        <img src="static/assets/nikhil.jpg" alt=" Mr. Nikhil Warge">
+                    </div>
+                    <div class="container">
+                        <h2> Mr. Nikhil Warge</h2>
+                        <!-- <p class="title dt">25-04-2024</p> -->
+                        <h2 class="s-text ml" style="font-size: smaller;"> IoT and Python developer at TCS Pune </h2>
+                        <p>Nikhil Warge is working as an IoT developer on Nissan driverless car project Japan. He has
+                            delivered many hands-on sessions in the workshops and AICTE approved ATAL FDPs in
+                            engineering colleges.</p>
+                        <br><br><br><br><br><br>
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                            target="_blank">
+                            <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+                        <!-- -->
+                        <!-- <p>example@example.com</p> -->
+
+                    </div>
+                </div>
+                <button class="button">April 25 2024 |
+                    10 AM</button>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="title-c"> AI in Education </div>
+                        <div class="img-card">
+                            <img src="static/assets/kulkarni.jpg" alt="kulkarni">
+                        </div>
+                        <div class="container">
+                            <h2>Dr. P. J. Kulkarni</h2>
+                            <!-- <p class="title dt">25-04-2024</p> -->
+                            <h2 class="s-text ml" style="font-size: smaller;">Former Deputy Director and Professor in
+                                CSE at Walchand College Of
+                                Engineering, Sangli</h2>
+
+                            <p>He completed his PhD in Electronics Engineering. He worked as Chairman, Member of various
+                                Board of Studies (BoS) and I/C Dean of Faculty of Engineering at Shivaji University
+                                Kolhapur. He received various research grants from AICTE, DST and Shivaji University for
+                                setting up research facilities at WCE. He is a recipient of “Best Teacher Award” of
+                                Government of Maharashtra for the year 2011-12. </p>
+                            <br>
+                            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                                target="_blank">
+                                <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                            <!-- <p>example@example.com</p> -->
+
+                        </div>
+                    </div>
+                    <button class="button">April 25 2024 |
+                        10 AM</button>
+                </div>
+
+
+                <div class="column">
+                    <div class="card">
+                        <div class="title-c">Blockchain Basics</div><br>
+                        <img src="static/assets/kamlesh.jpg" alt="Mr. Kamlesh Nagavare">
+                        <div class="container">
+                            <h2>Mr. Kamlesh Nagavare</h2>
+                            <!-- <p class="title dt">25-04-2024</p> -->
+                            <h2 class="s-text ml" style="font-size: smaller;"> Co-Founder FSV Capital</h2>
+
+                            <p class="">Mr. Kamlesh is a TEDx speaker and Co-founder of FSV Capital. He is also
+                                among
+                                the
+                                top 30 Influencers of Blockchain in India and serve as the Hyperledger India
+                                Co-Chair,
+                                as
+                                well as a member of the Hyperledger Technical Steering Committee (TSC 2021-22) which
+                                drives
+                                the technical direction of the Hyperledger Foundation, the Linux Foundation
+                                enterprise
+                                blockchain project.</p>
+                            <br><br><br><br><br>
+                            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                                target="_blank">
+                                <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                            <!-- <p>example@example.com</p> -->
+
+                        </div>
+                    </div>
+                    <button class="button">April 25 2024 |
+                        10 AM</button>
+                </div>
+
+
+                <div class="column">
+                    <div class="card">
+                        <div class="title-c">Generative AI </div><br>
+                        <img src="static/assets/Kaustubh.png" alt="Mr. Kaustubh Anwekar">
+                        <div class="container">
+                            <h2>Mr. Kaustubh Anwekar</h2>
+                            <!-- <p class="title dt">25-04-2024</p> -->
+                            <h2 class="s-text ml" style="font-size: smaller;"> Director LTIMindtree </h2>
+                            <p>Artificial Intelligence (AI) & Machine Learning (ML) professional with 15+ years'
+                                experience in building Web, Database and Machine Learning / Deep Learning applications.
+                            </p>
+                            <br><br><br><br><br>
+                            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                                    target="_blank">
+                                    <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                            <!-- <p>example@example.com</p> -->
+
+                        </div>
+                    </div>
+                    <button class="button">April 25 2024 | 10 AM</button>
+                </div>
+
+
+
+                <div class="column">
+                    <div class="card">
+                        <div class="title-c">Internet of Things</div><br>
+                        <img src="static/assets/Jayesh.jpg" alt="Mr. Jayesh Purohit">
+                        <div class="container">
+                            <h2>Mr. Jayesh Purohit</h2>
+                            <!-- <p class="title dt">25-04-2024</p> -->
+                            <h2 class="s-text ml" style="font-size: smaller;"> Data Engineer at Whirlpool Corporation |
+                                AWS | GCP | IBM Cloud | Azure | Python | Data Science | ETL</h2>
+
+                            <p> Cloud Data Engineer with 3+ Years of
+                                experience at Whirlpool in building end to end Data Engineering Solutions on AWS, GCP,
+                                Azure & IBM Cloud Platforms. </p>
+                            <br><br><br><br><br>
+                            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                                    target="_blank">
+                                    <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                            <!-- <p>example@example.com</p> -->
+
+                        </div>
+                    </div>
+                    <button class="button">April 25 2024 |
+                        10 AM</button>
+                </div>
+
+
+                <div class="column">
+                    <div class="card">
+                        <div class="title-c">Internet of Things</div><br>
+                        <img src="static/assets/Ankit.jpg" alt="Mr. Ankit Shrivastava">
+                        <div class="container">
+                            <h2>Mr. Ankit Shrivastava</h2>
+                            <!-- <p class="title dt">25-04-2024</p> -->
+                            <h2 class="s-text ml" style="font-size: smaller;"> IOT Data Engineer at Whirlpool
+                                Corporation - AWS | Ex- ZS, Fiserv</h2>
+
+                            <p class="">Data Engineer having experience in Core Development, Data Warehousing, Business
+                                Intelligence Projects, Support in Banking Domain</p>
+                            <br><br><br><br><br>
+                            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                                target="_blank">
+                                <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                            <!-- <p>example@example.com</p> -->
+
+                        </div>
+                    </div>
+                    <button class="button">April 25 2024 |
+                        10 AM</button>
+                </div>
+
+
+
+
+
+                <div class="column" style="transform: scale(0);" id="hidden-c">
+                    <div class="card">
+                        <div class="img-card">
+                            <img src="static/assets/nibu.PNG" alt="Mr. Nibu John Thomas">
+                        </div>
+                        <div class="container">
+                            <h2>Dr. Nibu John Thomas</h2>
+                            <!-- <p class="s-text dt">26-04-2024</p> -->
+                            <h2 class="s-text ml" style="font-size: smaller;"> IIT Madras | Gamification- AI- Metaverse
+                                | Trainer- Researcher-
+                                Consultant
+                            </h2>
+
+                            <p>Dr. Nibu John Thomas is a passionate professional who works at the intersection of
+                                Technology, Management, and Psychology, focusing on Human Resource Development,
+                                Organizational Behavior, and Human-Computer Interactions. He also received the esteemed
+                                ‘Academy of Management Award’ in 2022. He is also a trainer for multiple programs at IIT
+                                Madras and IITM Research Park.</p>
+                            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScUS_ac1TM_objf86b81SHLPQkj3w_W3CGHyygiTTeL0bbZOA/viewform"
+                                target="_blank">
+                                <button class="button-50" style="margin-bottom: -24px;">Register Now</button></a> -->
+
+
+                            <!-- <p>example@example.com</p> -->
+
+                        </div>
+                    </div>
+                    <!-- <p><button class="button">Contact</button></p> -->
+                </div>
+
+
+            </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- footer  -->
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-nav">
+                <a href="/">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="leadership.html">LEADERSHIP</a>
+                <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+                <a href="registration.html">REGISTRATION</a>
+                <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+                <a href="speakers.html">SPEAKERS</a>
+                <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+                <a href="committee.html">COMMITTEE</a>
+                <a href="contact.html">CONTACT US</a>
+            </div>
+            <br>
+            <br>
+            <div class="social-icons">
+                <a href="https://m.facebook.com/story.php?story_fbid=pfbid02LKfmkhkkkiyaJ1hxqwT4awjvSnx9Eyiam3UnXiSRPryu4yanMxX4rJfMdgm6WfWCl&id=100066361166737"
+                    target="_blank" class="fab fa-facebook"></a>
+                <a href="https://www.instagram.com/p/C1tq2D0BF3_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA"
+                    target="_blank" class="fab fa-instagram"></a>
+                <!-- <a href="#" target="_blank" class="fab fa-youtube"></a> -->
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7148968998427168769" target="_blank"
+                    class="fab fa-linkedin"></a>
+                <a href="https://x.com/mitadtpune/status/1743205664011456687?s=20" target="_blank"
+                    class="fab fa-twitter"></a>
+            </div>
+
+            <h3>MIT Art, Design and Technology University</h3><br>
+            <p>Copyright &copy; 2024 Mitadtsocicon - All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+        const ps = document.querySelectorAll('p');
+        const observer = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                entry.target.classList[entry.target.scrollHeight > entry.contentRect.height ? 'add' : 'remove']('truncated');
+            }
+        });
+
+        ps.forEach(p => {
+            observer.observe(p);
+        });
+    </script>
+
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="static/assets/favcon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor Information</title>
+  <style>
+    #section {
+      /* margin: 5%; */
+      /* margin-top: 15rem; */
+    }
+
+    #section>h1 {
+      margin-top: 3%;
+      margin-bottom: 8px;
+    }
+
+    .committee {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      flex-direction: row;
+    }
+
+    .c-track>* {
+      width: calc(100% / 3.4) !important;
+    }
+
+    .mentor-box {
+      background-color: var(--main-bg);
+      /* Grey background color for the box */
+      padding: 20px;
+      margin: 15px;
+      width: 85%;
+    }
+
+    .mentor-heading {
+      font-size: 40px;
+      color: var(--main-black);
+      margin-bottom: 10px;
+      padding-bottom: 15px;
+      margin-left: 20px;
+    }
+
+    .mentor-details {
+      list-style-type: none;
+      padding: 0;
+      color: var(--main-black);
+      font-size: 20px;
+      margin-top: -5px;
+    }
+
+    .mentor-details li {
+      margin-bottom: 10px;
+    }
+
+    .track-heading {
+      font-size: 30px;
+      color: var(--main-black);
+      margin-bottom: 10px;
+      margin-left: 20px;
+    }
+
+    .track {
+      font-size: 25px;
+      color: var(--main-black);
+      margin-bottom: 10px;
+      margin-left: 20px;
+    }
+
+    /* Card Styles */
+
+    .additional-section2 {
+      padding: 20px;
+      border-radius: 20px;
+      background-color: var(--light-2);
+      width: 48%;
+      margin: 10px;
+      /* Adjust the width as needed to leave space for margins */
+      box-sizing: border-box;
+
+    }
+
+    .Committee .additional-section2 {
+      /* ... (existing styles) */
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .Committee .additional-section2:hover {
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+      /* Increase the shadow on hover */
+
+    }
+
+    .additional-section2 h2 {
+      font-size: 20px;
+      padding-bottom: 5px;
+      letter-spacing: 1.15px;
+      word-spacing: 1.15px;
+      text-align: center;
+      color: var(--main-theme);
+      margin: 2.5%;
+      font-weight: 600;
+    }
+
+    .subpoints {
+      margin-left: 0.1%;
+      width: 80%;
+    }
+
+    .subpoint {
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 9px;
+      text-align: left;
+      margin-left: 15px;
+
+    }
+
+    .subpoint ul {
+      list-style: none;
+      /* Remove default list styling */
+      padding: 0;
+      /* Remove default padding */
+      margin: 0;
+      /* Remove default margin */
+    }
+
+    /* Note Section Styles */
+
+    .additional-section2.note {
+      margin: 2.5% 0;
+      width: 90%;
+    }
+
+    .additional-section2.note ul {
+      width: 90%;
+      margin-top: 3%;
+    }
+
+    .additional-section2.note li {
+      font-size: 18px;
+      margin-top: 9px;
+    }
+
+    /* Button Container Styles */
+
+    .button-container {
+      display: flex;
+      margin: 5%;
+      margin-top: 10%;
+      justify-content: space-around;
+    }
+
+    .btn-div {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .btn-div a.btn {
+      padding: 15px;
+      border: solid;
+      border-width: 2px;
+      border-radius: 1.5rem;
+      text-decoration: none;
+      border-color: var(--main-theme);
+      color: var(--main-theme);
+      font-weight: 700;
+      background: linear-gradient(to left, var(--main-transparent) 50%, var(--main-theme) 50%) right;
+      background-size: 200%;
+      transition: .5s ease-out;
+    }
+
+    .btn-div a.btn:hover {
+      color: var(--main-white);
+      background-position: left;
+    }
+
+    .subpoints {
+      margin-left: 0.1%;
+      width: 100%;
+      text-align: justify;
+    }
+
+    .subpoint {
+      list-style: none;
+      /* Remove default list styling */
+      padding: 0;
+      /* Remove default padding */
+      margin: 0;
+      /* Remove default margin */
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 9px;
+      text-align: left;
+      margin-left: 50px;
+      line-height: 1.5;
+    }
+
+    /* 
+    .banner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      margin-left: 25%;
+      margin-right: 25%;
+      background-color: #48135a;
+      background-size: cover;
+      background-position: center;
+      font-size: 40px;
+      color: #fff;
+    } */
+
+
+    @media only screen and (max-width: 600px) {
+      .c>* {
+        width: 100%;
+      }
+
+      .c-track>* {
+        width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (min-width: 600px) {
+      .c>* {
+        width: 100%;
+      }
+
+      .c-track>* {
+        width: calc(100% / 2.2) !important;
+      }
+    }
+
+
+    @media only screen and (min-width: 1300px) {
+      .c>* {
+        width: calc(100% / 2.1);
+      }
+
+      .c-track>* {
+        width: calc(100% / 3.4) !important;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="nav">
+    <div class="logo">
+      <a href="#"><img src="static/assets/logo.png" alt="Logo" id="logo"></a>
+      <a href="#"><img src="static/assets/S-1.jpg" alt="Logo" id="e-logo"></a>
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">About </button>
+        <div class="dropdown-content">
+          <a href="about.html">About Us</a>
+          <a href="leadership.html">Leadership</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Information For Authors </button>
+        <div class="dropdown-content">
+          <a href="Call-for-papers.html">Call For Papers</a>
+          <a href="registration.html">Registration</a>
+          <a href="Guidelines_and_Template.html">Guidelines and Template</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Speakers & Events </button>
+        <div class="dropdown-content">
+          <a href="speakers.html">Speakers</a>
+          <a href="Conference_schedule.html">Conference Schedule</a>
+        </div>
+      </div>
+      <a href="committee.html">Committee</a>
+      <a href="contact.html">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- mobile -->
+  <nav id="mob-nav">
+    <input type="checkbox" id="check">
+    <label class="logo" id="logo"><img src="static/assets/logo-light.png" alt="Logo"></label>
+    <a href="#"><img src="static/assets/S-1.png" alt="Logo" id="e-logom"></a>
+    
+    <label for="check" class="checkbtn" onclick="openNav()">
+      <i class="fas fa-bars"></i>
+    </label>
+    <!-- <div class="logo">
+        <img src="static/assets/logo.png" alt="logo" >
+    </div> -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="section">
+
+    <h1 style="color: var(--main-theme);">Committee</h1>
+    <div class="line"></div>
+    <div class="committee c">
+      <div class="additional-section2">
+        <h2 class="mentor-heading">MENTOR</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li><strong>Dr. Vishwanath D. Karad </strong></li>
+            <li>Father Founder, MAEER’s MIT Group of institutions,</li>
+            <li>President, MIT Art, Design and Technology University Pune.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="additional-section2">
+        <h2 class="mentor-heading"> CHIEF PATRON</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li><strong>Prof. Dr. Mangesh T. Karad </strong></li>
+            <li>Secretary and Trustee MAEER’s MIT Group of Institutions,<br> Executive- President & Vice-Chancellor,
+            </li>
+            <li>MIT Art, Design and Technology University, Pune. </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="mentor-heading">PATRONS</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li><strong>Prof. Dr. Sunita M. Karad </strong></li>
+            <li>Executive Director, MIT College of Management, <br>Central Admissions and ICT,<br> MIT Art Design &
+              Technology University.</li>
+            <br>
+            <li><strong>Prof. Dr. Anand Chakradeo </strong></li>
+            <li>Pro-Vice Chancellor, Art and Design,<br>
+              Dean, Faculty of Design and Architecture,<br>
+              Director, International Relations,<br>
+              MIT Art Design and Technology University</li>
+            <br>
+            <li><strong>Dr. Surekha Deshmukh </strong></li>
+            <li>Chair IEEE Pune Section</li>
+            <br>
+            <li><strong>Mr. Anand Gharpure </strong></li>
+            <li>Chair IEEE Bombay Section</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h1 style="color: var(--main-theme);">Chairs</h1>
+    <div class="line" style="width: 4rem !important;"></div>
+
+    <div class="committee c-track">
+      <div class="additional-section2">
+        <h2 class="mentor-heading">General Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li><b>Prof. Dr. Ramachandra Pujeri</b></li>
+            <li>Pro Vice Chancellor, Technology Cluster, <br>MIT ADT University, Pune. </li>
+            <br>
+            <li><b>Prof. Dr. Rajneeshkaur Sachdeo</b> </li>
+            <li>Director MIT School of Computing, Pune.</li>
+            <br>
+          </ul>
+        </div>
+      </div>
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Steering Committee Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. V. V. Shete</li>
+            <li>Dr. Rajesh Prasad</li>
+            <li>Dr. Ramesh Mali</li>
+            <li>Dr. Shalini Garg</li>
+            <li>Dr. Rajesh Jadhav</li>
+            <li>Dr. Krishna Kumar</li>
+            <li>Dr. Sudarshan Sanap</li>
+          </ul>
+        </div>
+      </div>
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Organizing Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Rekha Sugandhi</li>
+            <li>Dr. Shraddha Phansalkar</li>
+            <li>Dr. Ganesh Pathak</li>
+            <li>Dr. Reena Pagare</li>
+          </ul>
+        </div>
+      </div>
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Organizing Secretaries</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Suvarna Joshi</li>
+            <li>Dr. Nitin More</li>
+            <li>Prof. Rahul Sonkamble</li>
+          </ul>
+        </div>
+      </div>
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Publicity Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Shafi Pathan</li>
+            <li>Prof. Abhishek Dhore</li>
+            <li>Prof. Amit Uttarkar</li>
+            <li>Prof. Vishal Patil </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Web Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Prof. Bhagyashree Shendkar</li>
+            <li>Prof. Ruchita Sharma</li>
+            <li>Prof. Revati Raspayle</li>
+          </ul>
+        </div>
+      </div>
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Industry Relation Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Jagannath Nalawade</li>
+            <li>Prof. Sonali Deshpande </li>
+            <li>Prof. Suresh Kapare</li>
+            <li>Prof. Pratik Kamble</li>
+            <li>Prof. Nilesh Thorat</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Technical Program Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Jayashree Prasad</li>
+            <li>Dr. Suvarna Pawar </li>
+            <li>Dr. Gorakhnath Ghadage</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Social Media Communication</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Prof. Deepa Mishra</li>
+            <li>Prof. Namrata Naikwade</li>
+            <li>Prof. Pooja Oza</li>
+            <li>Prof. Rahul More</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Content Creation, Design Verification and Approval</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Prof. Neha Chaube</li>
+            <li>Prof. Sneha Singha</li>
+            <li>Prof. Khushal Kunjir</li>
+            <li>Prof. Dattaray Kale</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Finance Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Prof. Gurunath Waghale</li>
+            <li>Prof. Kiran Shinde</li>
+            <li>Dr. Sharon Christa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Publication Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Prof. Reetika Kerketta</li>
+            <li>Dr. Nitish Das</li>
+            <li>Dr. Sagar Tambe</li>
+            <li>Dr. Amar Buchade</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="mentor-heading">Workshop/Tutorial Chairs</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Prof. Trupti Kudale</li>
+            <li>Prof. Jyoti Gavhane</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h1 style="color: var(--main-theme);">Track Chairs</h1>
+    <div class="line"></div>
+
+    <div class="committee c-track">
+      <div class="additional-section2">
+        <h2 class="track">Al for Big Data & Analytics</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Nagesh Jadhav</li>
+            <li>Dr. Rashmi Nair</li>
+            <li>Dr. Pankaj Chandre</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="track">Al for Sustainable Cities</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Jagannath Nalawade</li>
+            <li>Dr. Rajendra Pawar </li>
+            <li>Prof. Tushar Mote</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="track">AI for Agriculture and Food Technology</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Prashant Dhotre</li>
+            <li>Prof. Deepali Lokare </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="track">AI for Cloud Computing</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Rajani Sajjan</li>
+            <li>Dr. Shweta Yadav </li>
+            <li>Prof. Aarti Pimpalkar</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="track">AI for Healthcare and Life Science </h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Ayesha Butalia</li>
+            <li>Dr. Anupama Buddhewar </li>
+            <li>Prof. Bhagyashree Shendkar</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="track">AI for Metaverse</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+
+            <li>Dr. Hyderali Hingoliwala</li>
+            <li>Dr. Dhanraj Dhotre </li>
+            <li>Dr. Sunita Parinam</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="track">AI For Education</h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. Chandrashekhar Goswami</li>
+            <li>Dr. Amol Bhosale </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="additional-section2">
+        <h2 class="track">AI for Blockchain and Security </h2>
+        <div class="subpoints">
+          <ul class="subpoint">
+            <li>Dr. N.P. Kulkarni</li>
+            <li>Dr. Rohit Pachlor </li>
+            <li>Dr. Saiprasad Potharaju</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-nav">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a> 
+      </div>
+      <br>
+      <br>
+      <div class="social-icons">
+        <a href="#" target="_blank" class="fab fa-facebook"></a>
+        <a href="#" target="_blank" class="fab fa-instagram"></a>
+        <a href="#" target="_blank" class="fab fa-youtube"></a>
+        <a href="#" target="_blank" class="fab fa-linkedin"></a>
+        <a href="#" target="_blank" class="fab fa-twitter"></a>
+      </div>
+
+      <h3>MIT Art, Design and Technology University</h3><br>
+      <p>Copyright &copy; 2024 Mitadtsocicon - All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+  </script>
+</body>
+</html>

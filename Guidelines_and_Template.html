@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="shortcut icon" href="static/assets/favcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            /* Reset default margin */
+            padding: 0;
+            /* Reset default padding */
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            min-height: 100vh;
+            background-color: var(--main-bg);
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+
+        section {
+            margin: 5%;
+            margin-top: 15rem;
+        }
+
+        .contact {
+            background: var(--main-bg);
+            height: 100%;
+            width: 100%;
+            gap: 20px;
+            /* min-height: 75vh; */
+            display: flex;
+            justify-content: space-between;
+            /* grid-template-columns: repeat(2, 2fr); */
+            align-items: center;
+            /* grid-gap: 6rem; */
+        }
+
+        .contact-form {
+            /* width: 100%; */
+            flex-basis: 1;
+        }
+
+        .map {
+            background-color: var(--main-bg-light);
+            /* background-color: aqua; */
+            flex-basis: 1;
+            /* max-width: 100%; */
+            width: 50%;
+            height: 600px;
+            border-radius: 10px;
+        }
+
+        iframe {
+            height: 100%;
+            width: 100%;
+            /* object-fit: fill; */
+        }
+
+        .contact-form h1 {
+            color: var(--main-black);
+            margin-bottom: 20px;
+            color: var(--main-theme);
+            font-size: 50px;
+        }
+
+        .contact-form p {
+            letter-spacing: 1px;
+            line-height: 25px;
+            font-size: 1.1rem;
+            margin-bottom: 3.8rem;
+            position: relative;
+        }
+
+        @media(max-width: 980px) {
+
+            .contact-form h1 {
+                font-size: 30px;
+            }
+
+            .contact {
+                display: block;
+            }
+
+            .contact-form p {
+                margin-bottom: 3rem;
+            }
+
+            .map {
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 750px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .contact {
+                display: block;
+            }
+
+            .map {
+                width: 100% !important;
+            }
+        }
+
+        .pdf {
+            font-size: x-large;
+        }
+
+        .border {
+            /* margin-top: 20px; */
+            padding: 25px;
+            border: solid;
+            border-width: 2px;
+            border-radius: 1.5rem;
+            text-decoration: none;
+            border-color: var(--main-theme);
+            color: var(--main-theme);
+            font-weight: 700;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="logo">
+            <a href="#"><img src="static/assets/logo.png" alt="Logo" id="logo"></a>
+            <a href="#"><img src="static/assets/S-1.jpg" alt="Logo" id="e-logo"></a>
+        </div>
+        <div class="menu">
+            <a href="/">Home</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">About </button>
+                <div class="dropdown-content">
+                    <a href="about.html">About Us</a>
+                    <a href="leadership.html">Leadership</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Information For Authors </button>
+                <div class="dropdown-content">
+                    <a href="Call-for-papers.html">Call For Papers</a>
+                    <a href="registration.html">Registration</a>
+                    <a href="Guidelines_and_Template.html">Guidelines and Template</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Speakers & Events </button>
+                <div class="dropdown-content">
+                    <a href="speakers.html">Speakers</a>
+                    <a href="Conference_schedule.html">Conference Schedule</a>
+                </div>
+            </div>
+            <a href="committee.html">Committee</a>
+            <a href="contact.html">Contact Us</a>
+
+        </div>
+    </nav>
+
+    <!-- mobile -->
+    <nav id="mob-nav">
+        <input type="checkbox" id="check">
+        <label class="logo" id="logo"><img src="static/assets/logo-light.png" alt="Logo"></label>
+        <a href="#"><img src="static/assets/S-1.png" alt="Logo" id="e-logom"></a>
+
+        <label for="check" class="checkbtn" onclick="openNav()">
+            <i class="fas fa-bars"></i>
+        </label>
+        <!-- <div class="logo">
+            <img src="static/assets/logo.png" alt="logo" >
+        </div> -->
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="/">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="leadership.html">LEADERSHIP</a>
+                <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+                <a href="registration.html">REGISTRATION</a>
+                <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+                <a href="speakers.html">SPEAKERS</a>
+                <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+                <a href="committee.html">COMMITTEE</a>
+                <a href="contact.html">CONTACT US</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="section">
+
+        <h1 class="heading">Guidelines</h1>
+        <div class="line"></div>
+        <div class="contact">
+            <div class="contact-form">
+                <h2>Present Your Paper</h2>
+                <p>Get ready to present your paper at a conference. A key part of the research and review process is
+                    presenting and defending your work in front of peers at a conference.<br><br>The first step in
+                    getting ready to present your paper is to determine what key message you want to communicate to your
+                    audience. Most conference presentations are 10+5 minutes long, so you will not have time to present
+                    all the details of your work. The objective of your presentation is to get people interested in your
+                    work, not to explain it to them fully.</p>
+                <h2>Organize your talk with these tips:</h2>
+
+                <p>
+                    1)Begin by stating the purpose or goal of your research. Tell the audience why your work is
+                    important.<br><br>
+                    2)Provide a very brief literature review. This will give the audience some context.<br><br>
+                    3)Move on to the main points of your own research.<br><br>
+                    4)Conclude by reiterating the importance of your research and emphasizing the key points.<br><br>
+                </p>
+
+                <h2>Tips for Creating Presentation Slides</h2>
+                <p>
+                    Remember that your slides do not have to tell the story on their own. Slides are meant to illustrate
+                    your work, not explain it entirely.<br><br>
+                    • Use graphics where possible. Limit text to phrases and bullet points, rather than full
+                    sentences.<br><br>
+                    • Once you have drafted your slides, record yourself practicing your talk with the slides so that
+                    you can identify areas for improvement.<br><br>
+                    • Be sure to stay within your time limit and leave time for questions from the audience.<br><br>
+
+                </p>
+            </div>
+            <!--<div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7567.610712362328!2d74.0171589420701!3d18.492473830382327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e805e62101f9%3A0x20beded1f9debf8d!2sMIT%20Art%2C%20Design%20%26%20Technology%20University!5e0!3m2!1sen!2sin!4v1705845351372!5m2!1sen!2sin"
+                    width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>-->
+        </div>
+
+        <h1 class="heading">Presentation Template</h1>
+        <div class="line"></div>
+
+        <div class="pdf">
+            <!-- <object data="static/assets/MITADTSoCiCon_Presentation_Template.pptx" type="application/vnd.openxmlformats-officedocument.presentationml.presentation" width="800" height="600">
+                Your browser doesn't support embedded presentations. Please <a href="static/assets/MITADTSoCiCon_Presentation_Template.pptx">download</a> the file to view it.
+            </object> -->
+            <a style="text-decoration: none;" href="static/assets/MITADTSoCiCon_Presentation_Template.pptx"> <span class="border">Download
+                    Presentation Template</span></a>
+        </div>
+
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-nav">
+                <a href="/">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="leadership.html">LEADERSHIP</a>
+                <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+                <a href="registration.html">REGISTRATION</a>
+                <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+                <a href="speakers.html">SPEAKERS</a>
+                <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+                <a href="committee.html">COMMITTEE</a>
+                <a href="contact.html">CONTACT US</a>
+            </div>
+            <br>
+            <br>
+            <div class="social-icons">
+                <a href="https://m.facebook.com/story.php?story_fbid=pfbid02LKfmkhkkkiyaJ1hxqwT4awjvSnx9Eyiam3UnXiSRPryu4yanMxX4rJfMdgm6WfWCl&id=100066361166737"
+                    target="_blank" class="fab fa-facebook"></a>
+                <a href="https://www.instagram.com/p/C1tq2D0BF3_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA"
+                    target="_blank" class="fab fa-instagram"></a>
+                <!-- <a href="#" target="_blank" class="fab fa-youtube"></a> -->
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7148968998427168769" target="_blank"
+                    class="fab fa-linkedin"></a>
+                <a href="https://x.com/mitadtpune/status/1743205664011456687?s=20" target="_blank"
+                    class="fab fa-twitter"></a>
+            </div>
+
+            <h3>MIT Art, Design and Technology University</h3><br>
+            <p>Copyright &copy; 2024 Mitadtsocicon - All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>

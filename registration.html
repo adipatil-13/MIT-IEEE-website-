@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="shortcut icon" href="static/assets/favcon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIT IEEE Registration</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #section {
+      margin: 5%;
+      /* margin-top: 12rem; */
+      /* min-height: 80vh; */
+    }
+
+    #fsection {
+      margin: 5%;
+      margin-top: -2.5rem;
+    }
+
+    #ssection {
+      margin: 5%;
+      margin-top: -2.5rem;
+    }
+
+    .registration-section {
+      text-align: start;
+      color: black;
+      padding: 20px;
+    }
+
+    .registration-section h1 {
+      font-size: 40px;
+    }
+
+    .fees-table {
+      width: 80%;
+      margin: auto;
+      margin-top: 20px;
+      border-collapse: collapse;
+      text-align: left;
+      /* Align content to the left */
+    }
+
+    .fees-table th,
+    .fees-table td {
+      border: 1px solid black;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      /* Make the content bold */
+    }
+
+    .fees-table th {
+      background-color: #0f8c9783;
+    }
+
+    .bank-details {
+      margin: 20px auto;
+      /* max-width: 600px; */
+    }
+
+    .bank-details p {
+      margin-bottom: 10px;
+      margin-left: 50px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav id="nav">
+    <div class="logo">
+      <a href="#"><img src="static/assets/logo.png" alt="Logo" id="logo"></a>
+      <a href="#"><img src="static/assets/S-1.jpg" alt="Logo" id="e-logo"></a>
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">About </button>
+        <div class="dropdown-content">
+          <a href="about.html">About Us</a>
+          <a href="leadership.html">Leadership</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Information For Authors </button>
+        <div class="dropdown-content">
+          <a href="Call-for-papers.html">Call For Papers</a>
+          <a href="registration.html">Registration</a>
+          <a href="Guidelines_and_Template.html">Guidelines and Template</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Speakers & Events </button>
+        <div class="dropdown-content">
+          <a href="speakers.html">Speakers</a>
+          <a href="Conference_schedule.html">Conference Schedule</a>
+        </div>
+      </div>
+      <a href="committee.html">Committee</a>
+      <a href="contact.html">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- mobile -->
+  <nav id="mob-nav">
+    <input type="checkbox" id="check">
+    <label class="logo" id="logo"><img src="static/assets/logo-light.png" alt="Logo"></label>
+    <a href="#"><img src="static/assets/S-1.png" alt="Logo" id="e-logom"></a>
+    
+    <label for="check" class="checkbtn" onclick="openNav()">
+      <i class="fas fa-bars"></i>
+    </label>
+    <!-- <div class="logo">
+        <img src="static/assets/logo.png" alt="logo" >
+    </div> -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="section">
+
+    <div class="registration-section">
+      <h1 class="heading">Registration Fees (Including GST)</h1>
+      <div class="line"></div>
+      <div class="space"></div>
+      <table class="fees-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Indian</th>
+            <th>Foreign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IEEE Member</td>
+            <td>Rs. 5500</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>Non IEEE Member</td>
+            <td>Rs. 6500</td>
+            <td>$150</td>
+          </tr>
+          <tr>
+            <td>IEEE Student Member</td>
+            <td>Rs. 4500</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>Non IEEE Student Member</td>
+            <td>Rs. 5500</td>
+            <td>$150</td>
+          </tr>
+          <tr>
+            <td>Participant IEEE (Non-Presenter)</td>
+            <td>Rs. 1500</td>
+            <td>$50</td>
+          </tr>
+          <tr>
+            <td>Participant Non IEEE (Non-Presenter)</td>
+            <td>Rs. 2000</td>
+            <td>$70</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id="fsection">
+
+    <div class="registration-section">
+      <h1 class="heading">Workshop Registration Fees (Including GST)</h1>
+      <div class="line"></div>
+      <div class="space"></div>
+      <table class="fees-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Indian</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IEEE Member</td>
+            <td>Rs. 350</td>
+          </tr>
+          <tr>
+            <td>Non IEEE Member</td>
+            <td>Rs. 600</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div id="ssection">
+
+    <div class="registration-section">
+      <h1 class="heading">Bank Details</h1>
+      <div class="line"></div>
+      <div class="space"></div>
+      <div class="bank-details">
+        <p><strong>Account No:</strong> 062521110000040</p>
+        <p><strong>IFSC Code (National Authors):</strong> BKID0000625</p>
+        <p><strong>SWIFT Code (International Authors):</strong> BKIDINBBPMB</p>
+        <p><strong>MICR:</strong> 411013049</p>
+        <p><strong>Bank Name:</strong> Bank of India</p>
+        <p><strong>Branch Name:</strong> MIT MAEER Rajbaug, Loni Kalbhor, Pune</p>
+        <p><strong>Account Type:</strong> Current- Institutional</p>
+        <p><strong>Account Payee Name:</strong> MIT ADTU-MITSOE</p>
+        <p>(<strong>Note:</strong> Remark as <strong>"Conference Registration_Name of Author"</strong>)</p>
+      </div>
+    </div>
+
+  </div>
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-nav">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a> 
+      </div>
+      <br>
+      <br>
+      <div class="social-icons">
+        <a href="https://m.facebook.com/story.php?story_fbid=pfbid02LKfmkhkkkiyaJ1hxqwT4awjvSnx9Eyiam3UnXiSRPryu4yanMxX4rJfMdgm6WfWCl&id=100066361166737"
+          target="_blank" class="fab fa-facebook"></a>
+        <a href="https://www.instagram.com/p/C1tq2D0BF3_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA"
+          target="_blank" class="fab fa-instagram"></a>
+        <!-- <a href="#" target="_blank" class="fab fa-youtube"></a> -->
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7148968998427168769" target="_blank"
+          class="fab fa-linkedin"></a>
+        <a href="https://x.com/mitadtpune/status/1743205664011456687?s=20" target="_blank" class="fab fa-twitter"></a>
+      </div>
+
+      <h3>MIT Art, Design and Technology University</h3><br>
+      <p>Copyright &copy; 2024 Mitadtsocicon - All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+</body>
+
+</html>

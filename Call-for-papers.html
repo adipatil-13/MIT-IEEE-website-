@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="shortcut icon" href="static/assets/favcon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call For Papers</title>
+  <style>
+    /* media  */
+
+    @media only screen and (max-width: 700px) {
+      /* #section {
+        margin-top: 25% !important;
+      } */
+
+      .point {
+        font-size: 18px !important;
+        letter-spacing: normal !important;
+        word-spacing: normal !important;
+      }
+
+      /* .call-for-reviewer-section {
+        display: none !important;
+      } */
+
+      /* .btn-review {
+        display: flex !important;
+      } */
+
+      .additional-section {
+        display: block !important;
+      }
+
+      .additional-section>* {
+        width: 90% !important;
+      }
+
+      .additional-section2 {
+        margin-bottom: 20px !important;
+      }
+    }
+
+    @media only screen and (min-width: 700px) {
+      /* #section {
+        margin-top: 20% !important;
+      } */
+
+      .additional-section>* {
+        width: calc(100% / 2.4) !important;
+      }
+
+    }
+
+    @media only screen and (min-width: 1520px) {
+      /* #section {
+        margin-top: 12% !important;
+      } */
+
+      .additional-section>* {
+        width: calc(100% / 3.4) !important;
+      }
+    }
+
+    /* Body */
+
+    /* #section {
+      margin: 5%;
+    } */
+
+    .line {
+      height: 4px;
+      width: 8rem;
+      background-color: var(--main-nav);
+      margin-left: 10px;
+      margin-bottom: 3rem;
+    }
+
+    .point {
+      font-size: 22px;
+      /* letter-spacing: 1.15px; */
+      /* word-spacing: 1.15px; */
+      text-align: justify;
+      /* Add text-align property for justification */
+    }
+
+    .call-for-reviewer-section {
+      margin-top: 5%;
+      margin-bottom: 2%;
+      display: flex;
+      padding: 0 0 0 0;
+      /* transform: translate(100% , -40%); */
+      /* margin-left: 30%; */
+      /* text-align: center; */
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+
+    .call-for-reviewer-text {
+      font-size: 38px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .call-for-reviewer-button {
+      /* display: inline-block; */
+      /* border-radius: 12px; */
+      /* padding: 8px; */
+      color: var(--main-disable) !important;
+      border-color: var(--main-disable) !important;
+      cursor: default;
+      /* font-size: x-large; */
+      /* margin-left: 20px; */
+    }
+
+    .call-for-reviewer-button:hover {
+      background-position: right !important;
+    }
+
+    .btn-review {
+      margin-top: 15%;
+      margin-bottom: 15%;
+      justify-content: center;
+      display: none;
+    }
+
+    .additional-section {
+      margin: 5% 2%;
+      width: 100%;
+      display: flex;
+      /* justify-content: space-around; */
+      gap: 20px;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .additional-section2 {
+      padding: 20px;
+      margin: 2.5px 0;
+      border-radius: 20px;
+      /* max-width: 40%; */
+      background-color: var(--light-2);
+    }
+
+    .additional-section>* {
+      width: calc(100% / 3.4);
+    }
+
+    .sub-head {
+      /* margin-left: calc(100% / 4.4); */
+      margin-bottom: 6%;
+      text-align: center;
+      color: var(--main-theme);
+    }
+
+    .subpoints {
+      margin-left: 0.1%;
+      width: 80%;
+    }
+
+    .subpoint {
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 9px;
+      text-align: left;
+      margin-left: 15px;
+    }
+
+    .button-container {
+      display: flex;
+      margin: 10% 5%;
+      flex-wrap: wrap;
+      gap: 5rem;
+      justify-content: space-around;
+    }
+
+    .btn {
+      padding: 25px;
+      border: solid;
+      border-width: 2px;
+      border-radius: 1.5rem;
+      text-decoration: none;
+      border-color: var(--main-theme);
+      color: var(--main-theme);
+      font-weight: 700;
+
+      /* animation */
+      background: linear-gradient(to left, var(--main-transparent) 50%, var(--main-theme) 50%) right;
+      background-size: 200%;
+      transition: .5s ease-out;
+    }
+
+    .btn:hover {
+      /* background-color: var(--main-theme); */
+      color: var(--main-white);
+      /* transition: ease-in 1s; */
+      background-position: left;
+    }
+
+    .button1 {
+      background-color: var(--main-theme);
+      /* Green */
+    }
+
+    .button2 {
+      background-color: var(--main-theme);
+      /* Blue */
+    }
+
+    .popover {
+      border: 2px solid var(--main-disable);
+      background-color: var(--main-bg);
+      border-radius: 12px;
+      margin-left: 0.8rem;
+      /* margin-top: -5rem; */
+    }
+
+    /* Popover Header */
+    .popover-title {
+      background-color: var(--main-bg);
+      color: var(--main-theme);
+      font-size: 20px;
+      text-align: center;
+    }
+
+    /* Popover Body */
+    /* .popover-content {
+      background-color: var(--main-white);
+      color: #FFFFFF;
+      padding: 25px;
+    } */
+
+    /* Popover Arrow */
+    .arrow {
+      border-right-color: var(--main-disable) !important;
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="popover"]').popover();
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- header -->
+
+  <nav id="nav">
+    <div class="logo">
+      <a href="#"><img src="static/assets/logo.png" alt="Logo" id="logo"></a>
+      <a href="#"><img src="static/assets/S-1.jpg" alt="Logo" id="e-logo"></a>
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">About </button>
+        <div class="dropdown-content">
+          <a href="about.html">About Us</a>
+          <a href="leadership.html">Leadership</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Information For Authors </button>
+        <div class="dropdown-content">
+          <a href="Call-for-papers.html">Call For Papers</a>
+          <a href="registration.html">Registration</a>
+          <a href="Guidelines_and_Template.html">Guidelines and Template</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Speakers & Events </button>
+        <div class="dropdown-content">
+          <a href="speakers.html">Speakers</a>
+          <a href="Conference_schedule.html">Conference Schedule</a>
+        </div>
+      </div>
+      <a href="committee.html">Committee</a>
+      <a href="contact.html">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- mobile -->
+  <nav id="mob-nav">
+    <input type="checkbox" id="check">
+    <label class="logo" id="logo"><img src="static/assets/logo-light.png" alt="Logo"></label>
+    <a href="#"><img src="static/assets/S-1.png" alt="Logo" id="e-logom"></a>
+    
+    <label for="check" class="checkbtn" onclick="openNav()">
+      <i class="fas fa-bars"></i>
+    </label>
+    <!-- <div class="logo">
+        <img src="static/assets/logo.png" alt="logo" >
+    </div> -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Body -->
+
+  <div id="section">
+
+    <!-- <div class="call-for-reviewer-section2"></div> -->
+
+    <div class="main-header" style="margin-bottom: 2%;">
+      <h1 class="heading">Call For Papers</h1>
+      <div class="line"></div>
+      <!-- <p class="point">Artificial Intelligence (AI) in general and some of its subfields, in particular, are being perceived as some of the most promising technologies today. Furthermore, they are being successfully applied to a wide variety of problems in both academia and industry. There has been a constantly growing flow of related research papers, as well as substantial progress being achieved in real-world, cutting-edge applications.<br><br>From recent research, it emerges that combining AI and sustainable development can assist industries in designing a better planet that meets current needs without jeopardizing future generations due to climate change or other major challenges.</p><br> -->
+
+      <p class="point">&emsp; &emsp; Artificial Intelligence (AI) stands at the forefront of technological advancements,
+        making significant contributions across academia and industry. The increasing volume of research papers and
+        tangible progress in cutting-edge applications underscore the transformative potential of AI. Notably, recent
+        research highlights the pivotal role AI can play in sustainable development, offering a strategic approach for
+        industries to design solutions that balance present needs with the imperative to secure a sustainable future.
+
+        <br><br>&emsp; &emsp; This intersection of AI and sustainability extends beyond environmental considerations,
+        influencing economic, social, and governance dimensions. Industries are increasingly leveraging AI to optimize
+        processes, reduce resource consumption, and enhance overall efficiency. This not only aligns with sustainable
+        practices but also contributes to the creation of a more resilient and adaptive industrial landscape.
+
+        <br><br>&emsp; &emsp; Ongoing research in this interdisciplinary space is producing innovative methodologies and
+        frameworks, ranging from AI-powered environmental trend predictions to decision support systems that integrate
+        long-term sustainability considerations. Collaborative efforts between researchers, industry leaders, and
+        policymakers are essential to foster a holistic approach in addressing global challenges. In essence, the
+        amalgamation of AI and sustainable development signifies a powerful alliance, equipping industries with the
+        tools necessary to navigate contemporary challenges responsibly and ensuring a legacy of positive and
+        sustainable change for current and future generations.
+
+      </p>
+    </div>
+
+    <!-- <hr width="72%"> -->
+
+
+
+    <div class="button-container">
+      <div class="btn-div">
+        <a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FMITADTSCIC2024" class="btn"
+          target="_blank">PAPER SUBMISSION</a>
+      </div>
+
+      <div class="btn-div dialog">
+        <!-- <h3 class="call-for-reviewer-text">Call For Reviewer:</h3> -->
+        <a class=" "></a>
+        <a class="btn call-for-reviewer-button" data-toggle="popover" title="Deadline Closed !">Register as a
+          Reviewer</a>
+      </div>
+
+      <!-- <div class="hide">Deadline Closed !!</div> -->
+
+      <div class="btn-div">
+        <a href="https://www.ieee.org/conferences/publishing/templates.html" class="btn" target="_blank">PAPER
+          TEMPLATE</a>
+      </div>
+    </div>
+
+
+
+    <!-- https://docs.google.com/forms/d/e/1FAIpQLSclDEXUp-7M2QZVmF2xg1nGfUtk8HI8mNpCHvE_0IJQkr5RoQ/viewform -->
+    <div class="btn-review"><a class="btn btn-disable" href="#" target="_blank" rel="noopener noreferrer">Register as a
+        Reviewer</a>
+    </div>
+
+    <!-- <hr width="70%"> -->
+
+    <div class="additional-section">
+
+      <div class="additional-section2 as2">
+        <h2 class="point sub-head">Al for Sustainable cities </h2>
+        <ul class="subpoints">
+          <li class="subpoint">Al in Energy Sector</li>
+          <li class="subpoint">Al based Smart Transportation Systems</li>
+          <li class="subpoint">Al based Smart Cities</li>
+          <li class="subpoint">Al for Climate and Environment Monitoring</li>
+        </ul>
+      </div>
+
+      <div class="additional-section2 as2">
+        <h2 class="point sub-head">Al for Agriculture </h2>
+        <ul class="subpoints">
+          <li class="subpoint">Al-based Decision Support Systems</li>
+          <li class="subpoint">AI-based Precision Agriculture</li>
+          <li class="subpoint">Smart Sensors and Internet of Things</li>
+          <li class="subpoint">Agricultural Robotics and Automation Equipment</li>
+          <li class="subpoint">Agricultural Knowledge-Based Systems</li>
+          <li class="subpoint">Computational Intelligence in Agriculture, Food and Bio-systems</li>
+          <li class="subpoint">AI in Agricultural Optimization Management</li>
+          <li class="subpoint">Intelligent Interfaces and Human-Machine Interaction</li>
+        </ul>
+      </div>
+
+      <div class="additional-section2 as2">
+        <h2 class="point sub-head"> AI for Healthcare and Life Science </h2>
+        <ul class="subpoints">
+          <li class="subpoint">Decision Support System</li>
+          <li class="subpoint">Electronic Health Record</li>
+          <li class="subpoint">Neural and Rehabilitation Engineering</li>
+          <li class="subpoint">Computational Systems</li>
+          <li class="subpoint">Modelling and Simulation in Medicine</li>
+          <li class="subpoint">Multiscale Modelling and Synthetic Biology</li>
+          <li class="subpoint">Biomedical Sensors and Wearable Systems</li>
+          <li class="subpoint">Therapeutic and Diagnostic Systems and Technologies</li>
+          <li class="subpoint">Biorobotics and Biomechanics</li>
+        </ul>
+      </div>
+
+      <div class="additional-section2 as2">
+        <h2 class="point sub-head">AI for Metaverse</h2>
+        <ul class="subpoints">
+          <li class="subpoint">Embodied Agents, Virtual Humans and (self-)avatars in Video Games and other Interactive
+            Media </li>
+          <li class="subpoint">Computer Vision in Metaverse </li>
+          <li class="subpoint">Gaming with Natural Language Processing in Metaverse </li>
+          <li class="subpoint">Computer Graphics Techniques </li>
+          <li class="subpoint">Ethical Issues </li>
+          <li class="subpoint">Immersive Analytics and Visualization </li>
+          <li class="subpoint">Collaborative AI and predicting patterns in Virtual Social interactions </li>
+          <li class="subpoint">Virtual Content Creation</li>
+          <li class="subpoint">Gesture and Emotion Recognition in Virtual Reality</li>
+          <li class="subpoint">User Experience and Usability</li>
+        </ul>
+      </div>
+
+      <div class="additional-section2 as2">
+        <h2 class="point sub-head"> Al, Big Data and Data Analytics</h2>
+        <ul class="subpoints">
+          <li class="subpoint">Semantics of Big Data </li>
+          <li class="subpoint">Streaming Data Analytics </li>
+          <li class="subpoint">Summarization and Materialized views </li>
+          <li class="subpoint">Topic Modelling </li>
+          <li class="subpoint">Big Data Analytics for Governance </li>
+          <li class="subpoint">Conceptual/Cognitive/Programming Models for Big data analytics</li>
+          <li class="subpoint">Data Fusion and Multi Modal Analytics</li>
+          <li class="subpoint">Data Models for Big Data Analytics</li>
+          <li class="subpoint">Machine Learning and AI Techniques for Big Data</li>
+          <li class="subpoint">Large-scale recommendation systems and graph analysis</li>
+          <li class="subpoint">Model Discovery from Big Data</li>
+          <li class="subpoint">Predictive Modelling</li>
+          <li class="subpoint">Scalability and Performance Issues</li>
+          <li class="subpoint">Security, Privacy and Legal issues specific to Big Data</li>
+        </ul>
+      </div>
+
+      <div class="additional-section2 as2">
+        <h2 class="point sub-head"> Al for Blockchain and Security</h2>
+        <ul class="subpoints">
+          <li class="subpoint">Automated Security Analysis</li>
+          <li class="subpoint">Authentication and Biometric Security/Privacy</li>
+          <li class="subpoint">Blockchain Security/Privacy</li>
+          <li class="subpoint">Data Protection</li>
+          <li class="subpoint">Digital Rights Management</li>
+          <li class="subpoint">Distributed Security and Consensus Protocols</li>
+          <li class="subpoint">Email, App and Web Security/Privacy</li>
+          <li class="subpoint">Data Protection</li>
+          <li class="subpoint">Digital Rights Management</li>
+          <li class="subpoint">Distributed Security and Consensus Protocols</li>
+          <li class="subpoint">Email, App and Web Security/Privacy</li>
+        </ul>
+      </div>
+
+      <div class="additional-section2 as2">
+        <h2 class="point sub-head"> Al for Cloud Computing </h2>
+        <ul class="subpoints">
+          <li class="subpoint">Natural Language Processing</li>
+          <li class="subpoint">Pattern Recognition</li>
+          <li class="subpoint">Data Mining and Machine Learning tools in Cloud Computing</li>
+          <li class="subpoint">Heuristic and Al planning strategies and tools</li>
+          <li class="subpoint">Hybrid Intelligent Systems in the Cloud Intelligent system Architectures</li>
+          <li class="subpoint">Data Mining and Knowledge Discovery in the Cloud</li>
+          <li class="subpoint">Security Evaluation and Benchmarks based on Cloud Security Policy</li>
+        </ul>
+      </div>
+
+      <div class="additional-section2 as2">
+        <h2 class="point sub-head"> AI For education </h2>
+        <ul class="subpoints">
+          <li class="subpoint">Al-Assisted and Interactive Technologies in an Educational Context </li>
+          <li class="subpoint">Game-Based Learning </li>
+          <li class="subpoint">Al-assisted Tutoring and Scaffolding </li>
+          <li class="subpoint">AI based Assessment </li>
+          <li class="subpoint">Ethics and AI in Education </li>
+          <li class="subpoint">Innovative Applications for Education</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="additional-section2">
+      <h2 class="point sub-head" style="margin: 2.5%;">NOTE</p>
+        <ul class="subpoints" style="width: 90%; margin-top: 3%;">
+          <li class="subpoint">All accepted, registered, and presented papers will be submitted to IEEE for possible
+            inclusion in IEEE Xplore® digital.</li><br>
+          <li class="subpoint">Workshop Proposals on the latest trends related to conference theme are to be invited.
+            Submit a proposal at <a href="mailto:socicon@mituniversity.edu.in">socicon@mituniversity.edu.in</a> in pdf
+            format.</li>
+        </ul>
+    </div>
+
+
+
+  </div>
+
+  <br><br><br>
+
+  <!-- Footer -->
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-nav">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a> 
+      </div>
+      <br>
+      <br>
+      <div class="social-icons">
+        <a href="https://m.facebook.com/story.php?story_fbid=pfbid02LKfmkhkkkiyaJ1hxqwT4awjvSnx9Eyiam3UnXiSRPryu4yanMxX4rJfMdgm6WfWCl&id=100066361166737"
+          target="_blank" class="fab fa-facebook"></a>
+        <a href="https://www.instagram.com/p/C1tq2D0BF3_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA"
+          target="_blank" class="fab fa-instagram"></a>
+        <!-- <a href="#" target="_blank" class="fab fa-youtube"></a> -->
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7148968998427168769" target="_blank"
+          class="fab fa-linkedin"></a>
+        <a href="https://x.com/mitadtpune/status/1743205664011456687?s=20" target="_blank" class="fab fa-twitter"></a>
+      </div>
+
+      <h3>MIT Art, Design and Technology University</h3><br>
+      <p>Copyright &copy; 2024 Mitadtsocicon - All Rights Reserved.</p>
+  </footer>
+
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+  </script>
+  </body>
+
+</html>

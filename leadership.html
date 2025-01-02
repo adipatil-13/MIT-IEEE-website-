@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="static/assets/favcon.png" type="image/x-icon">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+  <title>Leadership</title>
+  <style>
+    @media only screen and (max-width: 500px) {
+
+      .container {
+        display: block !important;
+      }
+
+      .image {
+        aspect-ratio: 2/1 !important;
+      }
+
+      .text {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media only screen and (min-width: 500px) {
+
+      .container {
+        display: block !important;
+      }
+
+      .image {
+        aspect-ratio: 2/1 !important;
+      }
+
+      .text {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media only screen and (min-width: 1200px) {
+      .container {
+        display: flex !important;
+      }
+
+      .image {
+        aspect-ratio: 3/1 !important;
+      }
+
+      .text {
+        margin: 0 !important;
+      }
+    }
+
+    #section {
+      /* margin: 5%; */
+      /* margin-top: 15rem; */
+    }
+
+    h1 {
+      color: var(--main-theme);
+      font-size: 32px;
+    }
+
+    .container {
+      /* margin-top: 5rem; */
+      display: flex;
+      justify-content: space-around;
+      gap: 2%;
+      margin-bottom: 3rem;
+      /* background-color: aqua; */
+    }
+
+    .img-div {
+      border-radius: 20px;
+      flex-basis: 40%;
+      overflow: hidden;
+      background-color: var(--light-2);
+    }
+
+    .image {
+      object-fit: contain;
+      width: 100%;
+      /* max-height: 500px; */
+      height: 100%;
+      flex-basis: 50%;
+      mix-blend-mode: multiply;
+      aspect-ratio: 1/1;
+    }
+
+    .text {
+      flex-basis: 50%;
+      background-color: var(--light-2);
+      border-radius: 20px;
+      padding: 2% 2.5%;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .p {
+      /* text-align: justify; */
+      font-weight: 500;
+      word-spacing: 2px;
+      letter-spacing: 2px;
+      line-height: 150%;
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="nav">
+    <div class="logo">
+      <a href="#"><img src="static/assets/logo.png" alt="Logo" id="logo"></a>
+      <a href="#"><img src="static/assets/S-1.jpg" alt="Logo" id="e-logo"></a>
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">About </button>
+        <div class="dropdown-content">
+          <a href="about.html">About Us</a>
+          <a href="leadership.html">Leadership</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Information For Authors </button>
+        <div class="dropdown-content">
+          <a href="Call-for-papers.html">Call For Papers</a>
+          <a href="registration.html">Registration</a>
+          <a href="Guidelines_and_Template.html">Guidelines and Template</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Speakers & Events </button>
+        <div class="dropdown-content">
+          <a href="speakers.html">Speakers</a>
+          <a href="Conference_schedule.html">Conference Schedule</a>
+        </div>
+      </div>
+      <a href="committee.html">Committee</a>
+      <a href="contact.html">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- mobile -->
+  <nav id="mob-nav">
+    <input type="checkbox" id="check">
+    <label class="logo" id="logo"><img src="static/assets/logo-light.png" alt="Logo"></label>
+    <a href="#"><img src="static/assets/S-1.png" alt="Logo" id="e-logom"></a>
+    
+    <label for="check" class="checkbtn" onclick="openNav()">
+      <i class="fas fa-bars"></i>
+    </label>
+    <!-- <div class="logo">
+        <img src="static/assets/logo.png" alt="logo" >
+    </div> -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="section">
+    <h1 class="heading">Leadership</h1>
+    <div class="line"></div>
+    <div class="container">
+      <div class="text">
+        <div class="text">
+          <h1>Father & Founder Dr. Vishwanath D. Karad</h1>
+          <p class="p">President, MIT Art, Design and Technology University,<br> Creator & Visionary Leader of the
+            World’s Largest
+            Dome, Vishwaraj Baugh, Loni Kalbhor, Pune, India.<br><br>
+            <q style="font-family:Hind;">ओम नमो जी आद्या, वेद प्रतिपाद्या. जय जय स्वसंवेद्या, आत्मरूपा</q>
+          </p>
+
+        </div>
+        </p>
+      </div>
+      <div class="img-div">
+        <img class="image" src="static/assets/VDK.png">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="text">
+        <h1>Dr. Mangesh T. Karad</h1>
+        <p class="p">Executive President & Vice Chancellor<br>
+          MIT ADT University, Pune.
+          <br><br>"Universities are the reflection of the societies, collective knowledge & wisdom”<br>
+        </p>
+      </div>
+      <div class="img-div">
+        <img class="image" src="static/assets/Bapu Sir PNG.png">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="text">
+        <h1>Dr. Sunita M. Karad</h1>
+        <p class="p">Executive Director, MIT College of Management, Central Admissions and ICT,<br> MIT Art Design &
+          Technology University.
+
+        </p> <br><br><br>
+      </div>
+      <div class="img-div">
+        <img class="image" src="static/assets/Sunita Madam .png">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="text">
+        <h1>Prof. Dr. Anant Chakradeo</h1>
+        <p class="p">Pro-Vice Chancellor, Art and Design,<br>
+          Dean, Faculty of Design and Architecture,<br>
+          Director, International Relations,<br>
+          MIT Art Design and Technology University.
+        </p>
+        <br><br>
+        </p>
+      </div>
+      <div class="img-div">
+        <img class="image" src="static/assets/Chakradeo Sir.png">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="text">
+        <h1>Prof. Dr. Ramchandra Pujeri</h1>
+        <p class="p">Pro Vice Chancellor, Technology Cluster<br>
+          MIT ADT University, Pune.
+        </p>
+        <br><br><br>
+        </p>
+      </div>
+      <div class="img-div">
+        <img class="image" src="static/assets/Pujeri Sir.png">
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-nav">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a> 
+      </div>
+      <br>
+      <br>
+      <div class="social-icons">
+        <a href="#" target="_blank" class="fab fa-facebook"></a>
+        <a href="#" target="_blank" class="fab fa-instagram"></a>
+        <a href="#" target="_blank" class="fab fa-youtube"></a>
+        <a href="#" target="_blank" class="fab fa-linkedin"></a>
+        <a href="#" target="_blank" class="fab fa-twitter"></a>
+      </div>
+
+      <h3>MIT Art, Design and Technology University</h3><br>
+      <p>Copyright &copy; 2024 Mitadtsocicon - All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+
+</body>
+
+</html>

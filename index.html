@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="static/assets/favcon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIT IEEE</title>
+  <style>
+    /* Scrool Text */
+
+    #scroll-container {
+      border: 3px solid rgb(97, 73, 6);
+      background-color: rgb(97, 73, 6);
+      /* border-radius: 5px; */
+      padding: 8px;
+      font-size: x-large;
+      color: white;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      bottom: 0;
+    }
+
+    #scroll-text {
+      text-align: right;
+
+      /* animation properties */
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+
+      -moz-animation: my-animation 15s linear infinite;
+      -webkit-animation: my-animation 15s linear infinite;
+      animation: my-animation 15s linear infinite;
+    }
+
+    /* for Firefox */
+    @-moz-keyframes my-animation {
+      from {
+        -moz-transform: translateX(-100%);
+      }
+
+      to {
+        -moz-transform: translateX(100%);
+      }
+    }
+
+    /* for Chrome */
+    @-webkit-keyframes my-animation {
+      from {
+        -webkit-transform: translateX(-100%);
+      }
+
+      to {
+        -webkit-transform: translateX(100%);
+      }
+    }
+
+    @keyframes my-animation {
+      from {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+
+      to {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+    }
+
+
+    /* Media Quries */
+
+    @media only screen and (max-width: 1200px) {
+      .tab-label {
+        margin-bottom: 20px;
+        padding: 0.5rem 1.2rem !important;
+        right: 0 !important;
+        min-width: 90px;
+      }
+
+      .tab-content {
+        display: block !important;
+        margin-top: 58% !important;
+      }
+
+      .tabs>* {
+        width: 100% !important;
+      }
+
+      /* #slide {
+        width: 110% !important;
+        overflow-x: hidden !important;
+      } */
+
+      .content>h1 {
+        font-size: 32px;
+      }
+
+      .btn-flex {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    @media only screen and (min-width: 1200px) {
+      .tab-label {
+        margin-bottom: 2%;
+        padding: 1rem 2.5rem !important;
+        right: 0;
+      }
+
+      .tab-content {
+        display: block !important;
+        margin-top: 8.5rem !important;
+      }
+
+      .tabs>* {
+        width: calc(100% / 2.4) !important;
+      }
+    }
+
+    @media only screen and (min-width: 1700px) {
+      .tab-label {
+        margin-bottom: 0rem !important;
+        padding: 1.2rem 5rem !important;
+      }
+
+      .tab-content {
+        display: flex !important;
+        margin-top: 5rem !important;
+      }
+
+      .tabs>* {
+        width: calc(100% / 3.4) !important;
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      .sub-speaker {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: space-evenly;
+        align-content: center !important;
+        align-items: center !important;
+      }
+    }
+
+
+    * {
+      transition-property: all;
+      transition-duration: 1s;
+      transition-timing-function: ease;
+    }
+
+    #section {
+      /* margin-top: 6rem !important; */
+      min-height: 100vh;
+    }
+
+    .border {
+      /* margin-top: 20px; */
+      padding: 25px;
+      border: solid;
+      border-width: 2px;
+      border-radius: 1.5rem;
+      text-decoration: none;
+      border-color: var(--main-theme);
+      color: var(--main-theme);
+      font-weight: 700;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      row-gap: 70px;
+      justify-content: center;
+      cursor: default;
+      margin-bottom: 5%;
+    }
+
+
+    .btn-flex {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .btn {
+      color: var(--light-1);
+      font-weight: 700;
+      font-size: larger;
+
+    }
+
+
+
+    /* .btn-sec {
+      color: green;
+    } */
+
+    /* SLide */
+
+    #slide {
+      /* margin-top: 7rem; */
+      width: 100vw;
+      /* margin-left: 10px; */
+      height: 90vh;
+      background: url('static/assets/soc-bg.jpg') center/cover no-repeat;
+      /* aspect-ratio: 2/1; */
+      /* height: 100vh; */
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .content {
+      /* z-index: 1; */
+      text-align: center;
+      color: var(--light-2);
+      padding: 20px;
+      /* Add padding for better readability */
+    }
+
+    .content>h1 {
+      color: var(--light-2);
+    }
+
+    .main-tim {
+      background-color: var(--main-transparent) !important;
+    }
+
+    .main-tim>.time {
+      background-color: var(--main-theme-semitrans) !important;
+      /* border-color: var(--main-theme); */
+      /* border-width: 2px; */
+      color: var(--light-2);
+    }
+
+    .main-tim>.coln {
+      color: var(--light-2);
+    }
+
+    /* Wrapper */
+
+    .wrapper {
+      /* max-width: 50rem; */
+      /* width: 100%; */
+      margin: 0 2%;
+      margin-top: 4rem;
+    }
+
+    .tabs {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      /* margin: 3rem 0; */
+      /* background: #1abc9c; */
+      min-height: 18rem;
+      /* height: 14.75rem; */
+    }
+
+    .tabs>* {
+      width: calc(100% / 3.4);
+    }
+
+    .tab-content {
+      width: 100%;
+      height: 20rem;
+      position: relative;
+      /* z-index: 1; */
+      /* top: 2.75em; */
+      /* left: 0; */
+      /* border-radius: 20px; */
+      /* margin-top: 5rem; */
+      display: flex;
+      flex-wrap: wrap;
+      /* gap: 20px; */
+      /* padding: 1.618rem; */
+      /* opacity: 1; */
+      transition: all 0.35s;
+    }
+
+    .sub-tab {
+      flex-grow: 1;
+      padding: 3rem;
+      text-align: center;
+      /* display: flex; */
+      /* flex-direction: column; */
+      /* justify-content: space-between; */
+      align-content: center;
+      /* flex-wrap: wrap; */
+      min-height: 10rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: x-large;
+      background-color: var(--light-2);
+    }
+
+    .date {
+      color: var(--main-theme);
+    }
+
+    .timmer {
+      background-color: var(--main-bg-light);
+      flex-grow: 1.5;
+      gap: 5%;
+    }
+
+    .coln {
+      margin-top: 4%;
+    }
+
+    .time {
+      background-color: var(--light-2);
+      border-radius: 10px;
+      padding: 4%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .sponser-div {
+      display: flex;
+      gap: 100px;
+      /* justify-content: space-between; */
+    }
+
+    .s-img {
+      /* aspect-ratio: 1/1; */
+      flex-basis: 22%;
+      align-self: center;
+    }
+
+    .img {
+      height: auto;
+      mix-blend-mode: multiply;
+      width: 100%;
+      /* aspect-ratio: 3/1; */
+    }
+
+    /* Flip Card */
+
+
+    .flip-card-inner {
+      position: relative;
+      width: auto;
+      height: auto;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      /* background-color: aqua; */
+      flex: 1;
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 50px;
+      right: 0;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-self: center;
+    }
+
+    .flip-card-back {
+      /* background-color: #2980b9; */
+      /* color: white; */
+      width: 80%;
+      height: auto;
+      top: 0;
+      right: 0;
+      transform: rotateY(180deg);
+      padding: 3rem;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: center;
+      flex-wrap: wrap;
+      min-height: 10rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: x-large;
+      background-color: var(--light-2);
+    }
+
+    .space {
+      padding: 1.5rem 0;
+    }
+
+    .CIDText {
+      font-size: x-large;
+    }
+
+    .datetext {
+      font-size: 40px;
+      color: gold;
+    }
+
+    .pointer:hover {
+      cursor: pointer;
+    }
+
+
+    /* Speaker Section */
+
+
+    .sub-speaker {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .mid {
+      background-color: rgba(134, 134, 134, 0.16);
+      padding: 3rem;
+      margin: 3rem 0;
+      /* width: 90%; */
+      text-align: center;
+    }
+
+    .sec-left {
+      text-align: center;
+    }
+
+    .sec-right {
+      text-align: center;
+    }
+
+    .c-1 {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .s-head {
+      font-size: xx-large;
+      /* max-width: 90%; */
+      text-align: center;
+      color: var(--main-theme);
+    }
+
+    .s-2 {
+      margin-bottom: 3rem !important;
+    }
+
+    /* card  for speakers*/
+
+    .text-blk {
+      line-height: 25px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+    }
+
+    .card {
+      width: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 30px;
+      padding-right: 25px;
+      padding-bottom: 40px;
+      padding-left: 25px;
+      box-shadow: rgba(134, 134, 134, 0.16) 0px 6px 24px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .card-content {
+      text-align: center;
+    }
+
+    .img-wrapper {
+      width: 175px;
+      height: 175px;
+      clip-path: circle(50% at 50% 50%);
+    }
+
+    .testimonial {
+      color: rgb(122, 122, 122);
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 28px;
+      margin-right: 0px;
+      margin-bottom: 5px;
+      margin-left: 0px;
+      line-height: 27px;
+    }
+
+    .position {
+      line-height: 26px;
+      color: rgb(0, 166, 127);
+      font-weight: 700;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 20px;
+      margin-left: 0px;
+    }
+
+    .disabled {
+      background: linear-gradient(to left, var(--main-transparent) 50%, var(--main-transparent) 50%) right;
+      cursor: default !important;
+    }
+
+    .ms{
+      display: flex;
+    }
+  </style>
+</head>
+
+<body onload="activate()">
+
+  <!-- <section>
+    <div id="scroll-container">
+      <div id="scroll-text">This is scrolling text.<div>
+        </div>
+  </section> -->
+
+  <nav id="nav">
+    <div class="logo">
+      <a href="#"><img src="static/assets/logo.png" alt="Logo" id="logo"></a>
+      <a href="#"><img src="static/assets/S-1.jpg" alt="Logo" id="e-logo"></a>
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">About </button>
+        <div class="dropdown-content">
+          <a href="about.html">About Us</a>
+          <a href="leadership.html">Leadership</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Information For Authors </button>
+        <div class="dropdown-content">
+          <a href="Call-for-papers.html">Call For Papers</a>
+          <a href="registration.html">Registration</a>
+          <a href="Guidelines_and_Template.html">Guidelines and Template</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Speakers & Events </button>
+        <div class="dropdown-content">
+          <a href="speakers.html">Speakers</a>
+          <a href="Conference_schedule.html">Conference Schedule</a>
+        </div>
+      </div>
+      <a href="committee.html">Committee</a>
+      <a href="contact.html">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- mobile -->
+  <nav id="mob-nav">
+    <input type="checkbox" id="check">
+    <label class="logo" id="logo"><img src="static/assets/logo-light.png" alt="Logo"></label>
+    <a href="#"><img src="static/assets/S-1.png" alt="Logo" id="e-logom"></a>
+
+    <label for="check" class="checkbtn" onclick="openNav()">
+      <i class="fas fa-bars"></i>
+    </label>
+    <!-- <div class="logo">
+        <img src="static/assets/logo.png" alt="logo" >
+    </div> -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="slide">
+    <div class="content">
+      <!-- <h2>MITADTSoCiCon 2024</h2> -->
+      <h1 class="heading"> 2024 MIT Art, Design & Technology <br>
+        School of Computing International Conference</h1>
+      <h2 class="CIDText"><u>Conference ID: #60330</u></h2>
+      <h1 class="datetext" style="color: gold;"> Sustainable AI for Multidisciplinary Applications </h1>
+      <h2 class="datetext">25th to 27th April 2024</h2>
+
+      <div class="btn-flex">
+        <a href="#" onclick="RClosed()"><button class="btn btn-sec pointer"
+            style="color: white;border-color: white; ">Workshop Registration</button>
+          <!-- https://forms.gle/j1NXmomNMj7yLXok9 -->
+          <!-- <div class="space"></div> -->
+          <a href="#" onclick="RClosed1()"><button class="btn btn-sec pointer"
+              style="color: white; border-color: white;">Conference Registration</button></a>
+          <!--  https://forms.gle/eisNrcqce8g6Bv44A  -->
+          <a href="speakers.html"><button class="btn btn-sec"
+              style="color: white; border-color: white; min-width: 15rem;">Speaker</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="section">
+
+    <div class="conference">
+      <h2 class="heading">About the Conference</h2>
+      <div class="line"></div>
+      <div class="conference-container">
+        <p class="point">
+          &emsp;
+          Sustainable AI can be understood as having two branches, AI for Sustainability and Sustainability of AI (e.g.
+          reduction of carbon emission and computing power). This Conference aims at addressing both the branches.<br><br>
+          &emsp;
+          MIT ADT School of Computing International Conference aims to bring UG.
+          / PG students, academicians, research scholars, scientists and industry persons to a common platform to
+          share,
+          discuss, and nurture recent trends in the domain of Artificial Intelligence roles and influences in the
+          multidisciplinary approaches to various fields of AR/VR, Big Data, Blockchain, Cloud Computing Edge
+          Computing,
+          Cyber Security and develop working relationships to explore solutions to real-world problem.
+          <br><br> &emsp;
+          It also provides the foremost interdisciplinary forum for scientists, engineers, and practitioners to
+          present
+          their latest
+          research results, ideas, developments, and applications Topics of interest for submission include, but are
+          not
+          limited to:
+          <br><br>
+        </p>
+        <div class="container">
+          <a style="text-decoration: none;" href="Conference_schedule.html#AI-BD"> <span class="border">Al for Big Data
+              and Data Analytics </span></a>
+          <a style="text-decoration: none;" href="Conference_schedule.html#AI-SC"> <span class="border">Al for
+              Sustainable Cities </span></a>
+          <a style="text-decoration: none;" href="Conference_schedule.html#AI-AF"> <span class="border">AI for
+              Agriculture and Food Technology </span></a>
+          <!-- <a style="text-decoration: none;" href="Conference_schedule.html#AI-MC"> <span class="border">AI for  </span></a> -->
+          <a style="text-decoration: none;" href="Conference_schedule.html#AI-HL"> <span class="border">Al for
+              Healthcare and Life Science </span></a>
+          <a style="text-decoration: none;" href="Conference_schedule.html#AI-MV"> <span class="border">Al for Metaverse
+              and Cloud Computing </span></a>
+          <a style="text-decoration: none;" href="Conference_schedule.html#AI-Ed"> <span class="border">Al for Education
+            </span></a>
+          <a style="text-decoration: none;" href="Conference_schedule.html#AI-BC"> <span class="border">AI for
+              Blockchain and Security </span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- <section id="Speakers">
+
+      <h2 class="heading">Speakers</h2>
+      <div class="line"></div>
+
+      <div class="sub-speaker">
+        <div class="sec-left">
+
+          <h2 class="s-head">Blockchain Basics</h2>
+
+          <div class="card">
+            <div class="img-wrapper">
+              <img src="static/assets/kamlesh.jpg">
+            </div>
+            <div class="card-content">
+              <p class="text-blk name">
+                Mr. Kamlesh Nagavare
+              </p>
+              <p class="text-blk position">
+                April 25 2024
+              </p>
+              <p class="text-blk testimonial">
+                Co-Founder FSV Capital <br><br><br>
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="sec-right">
+
+          <h2 class="s-head">AI in Education</h2>
+
+          <div class="card">
+            <div class="img-wrapper">
+              <img src="static/assets/kulkarni.png">
+            </div>
+            <div class="card-content">
+              <p class="text-blk name">
+                Dr. P. J. Kulkarni
+              </p>
+              <p class="text-blk position">
+                .
+              </p>
+              <p class="text-blk testimonial">
+                Former Deputy Director and Professor in CSE, Walchand College Of Engineering, Sangli
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="mid">
+
+        <h2 class="s-head s-2">Using AI and IoT Tools/Technologies for Unmanned Aircraft Systems (UAS)/Drone Domain
+        </h2>
+        <div class="sub-speaker c-1">
+
+          <div class="card c-2">
+            <div class="img-wrapper">
+              <img src="static/assets/kaushal.png">
+            </div>
+            <div class="card-content">
+              <p class="text-blk name">
+                Mr. Kaushal Sharma
+              </p>
+              <p class="text-blk position">
+                .
+              </p>
+              <p class="text-blk testimonial">
+                Joint Director, C-DAC, Pune <br><br><br>
+              </p>
+            </div>
+          </div>
+
+          <div class="card c-2">
+            <div class="img-wrapper">
+              <img src="static/assets/aaditya.png">
+            </div>
+            <div class="card-content">
+              <p class="text-blk name">
+                Mr. Aaditya Dilip Khapare
+              </p>
+              <p class="text-blk position">
+                .
+              </p>
+              <p class="text-blk testimonial">
+                Project Engineer @C-DAC Pune | Research & development-UAS/ Drone Project and IoT Certified
+              </p>
+            </div>
+          </div>
+
+          <div class="card c-2">
+            <div class="img-wrapper">
+              <img src="static/assets/nikhil.png">
+            </div>
+            <div class="card-content">
+              <p class="text-blk name">
+                Mr. Nikhil Warge
+              </p>
+              <p class="text-blk position">
+                .
+              </p>
+              <p class="text-blk testimonial">
+                IoT and Python developer at TCS Pune <br><br><br>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="sub-speaker">
+        <div class="sec-left">
+
+          <h2 class="s-head">AI for Psychology</h2>
+
+          <div class="card">
+            <div class="img-wrapper">
+              <img src="static/assets/shivnarayan.png">
+            </div>
+            <div class="card-content">
+              <p class="text-blk name">
+                Dr. Shivnarayan Khandre
+              </p>
+              <p class="text-blk position">
+                .
+              </p>
+              <p class="text-blk testimonial">
+                Founder & Director- Divine Life Counseling Clinic <br><br><br><br><br>
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="sec-right">
+
+          <h2 class="s-head">Epilepsy Myths and Facts</h2>
+
+          <div class="card">
+            <div class="img-wrapper">
+              <img src="static/assets/sujit.png">
+            </div>
+            <div class="card-content">
+              <p class="text-blk name">
+                Dr Sujit Jagtap
+              </p>
+              <p class="text-blk position">
+                .
+              </p>
+              <p class="text-blk testimonial">
+                MD (Pediatrics), DM (Neurology)
+                Fellowship in Epilepsy (SCTIMST)
+                WFS-certified consultant in Sleep Medicine
+                Consultant Pediatric and Adult Neurologist and Epileptologist
+                Deenanath Mangeshkar Hospital, Pune.
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </section> -->
+
+    <div class="imp-date">
+      <!-- <div class="space"></div> -->
+      <h1 class="heading">Important Dates</h1>
+      <div class="line"></div>
+
+      <div class="wrapper">
+        <div class="tabs">
+
+          <div class="tab flip-card">
+
+            <div class="sub-tab fill flip-card-inner">
+              <div class="flip-card-front">
+                <div class="date">January 28 2024</div>
+                <div class="space"></div>
+                <div class="event">Paper submission Deadline</div>
+                <!-- <div class="space"></div> -->
+              </div>
+
+              <div class="timmer flip-card-back" id="tm1">
+                <div class="time" id="Day">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Hour">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Min">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Sec">00</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="tab flip-card">
+
+            <div class="sub-tab fill flip-card-inner">
+              <div class="flip-card-front">
+                <div class="date">February 1 2024</div>
+                <div class="space"></div>
+                <div class="event">Workshop Proposal Acceptance Notification</div>
+                <!-- <div class="space"></div> -->
+              </div>
+
+              <div class="timmer flip-card-back" id="tm2">
+                <div class="time" id="Day">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Hour">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Min">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Sec">00</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="tab flip-card">
+
+            <div class="sub-tab fill flip-card-inner">
+              <div class="flip-card-front">
+                <div class="date">February 10 2024</div>
+                <div class="space"></div>
+                <div class="event">Notification Of Acceptance</div>
+                <!-- <div class="space"></div> -->
+              </div>
+
+              <div class="timmer flip-card-back" id="tm3">
+                <div class="time" id="Day">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Hour">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Min">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Sec">00</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="tab flip-card">
+
+            <div class="sub-tab fill flip-card-inner">
+              <div class="flip-card-front">
+                <del class="date mini">February 28 2024</del>
+                <div class="date">March 06 2024</div>
+                <div class="space"></div>
+                <div class="event">Author Registration</div>
+                <!-- <div class="space"></div> -->
+              </div>
+
+              <div class="timmer flip-card-back" id="tm4">
+                <div class="time" id="Day">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Hour">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Min">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Sec">00</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="tab flip-card">
+
+            <div class="sub-tab fill flip-card-inner">
+              <div class="flip-card-front">
+                <div class="date">March 15 2024</div>
+                <div class="space"></div>
+                <div class="event">Camera Ready Paper Submission</div>
+                <!-- <div class="space"></div> -->
+              </div>
+
+              <div class="timmer flip-card-back" id="tm5">
+                <div class="time" id="Day">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Hour">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Min">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Sec">00</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="tab flip-card">
+            <a href="Conference_schedule.html">
+              <div class="sub-tab fill flip-card-inner">
+                <div class="flip-card-front">
+                  <!-- <div class="date">March 15 2024</div> -->
+                  <div class="space"></div>
+                  <div class="event" style="color: black;">Conference Schedule</div>
+                  <!-- <div class="space"></div> -->
+                </div>
+
+                <div class="timmer flip-card-back" id="tm6">
+
+                  <!-- <div class="time" id="Day">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Hour">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Min">00</div>
+                <div class="coln">:</div>
+                <div class="time" id="Sec">00</div> -->
+                </div>
+
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="sponser">
+      <!-- <div class="space"></div> -->
+      <h1 class="heading">Sponsors</h1>
+      <div class="line"></div>
+      <div class="sponser-div">
+        <!-- <div class="s-img">
+          <img class="img" src="static/assets/S-1.jpg" alt="">
+        </div>
+        <div class="s-img">
+          <a href="" target="_blank" rel="noopener noreferrer"> <img class="img" src="static/assets/s-4.png" alt="">
+          </a>
+        </div> -->
+        <div class="s-img">
+          <img class="img" src="static/assets/s-2.jpg" alt="">
+          <h3 style="justify-content: center; text-align: center;">Technical sponsor</h3>
+        </div>
+
+        <div class="s-img">
+          <img class="img" src="static/assets/GS1.png" alt="">
+          <h3 style="justify-content: center; text-align: center;">Gold sponsor</h3>
+        </div>
+
+        <div class="s-img">
+          <img class="img" src="static/assets/SS.png" alt="">
+          <h3 style="justify-content: center; text-align: center;">Silver sponsor</h3>
+        </div>
+
+        
+        <div class="s-img">
+          <img class="img" src="static/assets/BS1.png" style="aspect-ratio: 20/12;" alt="">
+          <h3 style="justify-content: center; text-align: center;">Bronze sponsor</h3>
+        </div>        
+
+        <div class="s-img">
+          
+          <img class="img" src="static/assets/BS2.png" style="aspect-ratio: 20/12;" alt="">
+          <h3 style="justify-content: center; text-align: center;">Bronze sponsor</h3>
+          <!-- <h3 style="justify-content: center; text-align: center;">Bronze sponsor</h3> -->
+        </div>
+
+        <div class="s-img">
+          <div style="height: 50px;"></div>
+          <img class="img" src="static/assets/Supported.png" alt="">
+          <div style="height:37px;"></div>
+          <h3 style="justify-content: center; text-align: center;">Supported By</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="media">
+
+      <h1 class="heading">Media Partner </h1>
+      <div class="line"></div>
+
+      <div class="sponser-div">
+        <div class="s-img">
+          <a href="https://conferencealerts.co.in/" target="_blank"> <img class="img" src="static/assets/s-3.jpg"
+              alt=""> </a>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-nav">
+        <a href="/">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="leadership.html">LEADERSHIP</a>
+        <a href="Call-for-papers.html">CALL FOR PAPERS</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="Guidelines_and_Template.html">GUIDELINES AND TEMPLATE</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="Conference_schedule.html">CONFERENCE SCHEDULE</a>
+        <a href="committee.html">COMMITTEE</a>
+        <a href="contact.html">CONTACT US</a>
+      </div>
+      <br>
+      <br>
+      <div class="social-icons">
+        <a href="https://m.facebook.com/story.php?story_fbid=pfbid02LKfmkhkkkiyaJ1hxqwT4awjvSnx9Eyiam3UnXiSRPryu4yanMxX4rJfMdgm6WfWCl&id=100066361166737"
+          target="_blank" class="fab fa-facebook"></a>
+        <a href="https://www.instagram.com/p/C1tq2D0BF3_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA"
+          target="_blank" class="fab fa-instagram"></a>
+        <!-- <a href="#" target="_blank" class="fab fa-youtube"></a> -->
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7148968998427168769" target="_blank"
+          class="fab fa-linkedin"></a>
+        <a href="https://x.com/mitadtpune/status/1743205664011456687?s=20" target="_blank" class="fab fa-twitter"></a>
+      </div>
+
+      <h3>MIT Art, Design and Technology University</h3><br>
+      <p>Copyright &copy; 2024 Mitadtsocicon - All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Set the date we're counting down to
+
+    // var date;
+
+    function activate() {
+      getdate(new Date('January 28,2024 12:00:00'), 'tm1')
+      getdate(new Date('February 1,2024 12:00:00'), 'tm2');
+      getdate(new Date('February 10,2024 12:00:00'), 'tm3');
+      getdate(new Date('February 28,2024 12:00:00'), 'tm4');
+      getdate(new Date('March 15,2024 12:00:00'), 'tm5');
+      tm6();
+    }
+
+    function getdate(date, id) {
+      console.log("date", date)
+
+      // (() => {
+      //   $('div[onload]').trigger('onload');
+      // })();
+
+      console.log("date : ", new Date('January 21,2024 03:24:00'), date)
+      console.log(date);
+
+      var countDownDate = new Date(date).getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (days < 10) { days = "0" + days; }
+        if (hours < 10) { hours = "0" + hours; }
+        if (minutes < 10) { minutes = "0" + minutes; }
+        if (seconds < 10) { seconds = "0" + seconds; }
+
+        document.querySelector("#" + id + " > #Day").innerHTML = days;
+        document.querySelector("#" + id + " > #Hour").innerHTML = hours;
+        document.querySelector("#" + id + " > #Min").innerHTML = minutes;
+        document.querySelector("#" + id + " > #Sec").innerHTML = seconds;
+
+
+        // Output the result in an element with id="demo"
+        // document.getElementById(id).innerHTML = days + " : " + hours + " : "
+        //   + minutes + " : " + seconds + " ";
+
+        // If the count down is over, write some text 
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById(id).innerHTML = ` <div style="flex: 1;"> Closed!</div> `;
+        }
+      }, 1000);
+
+    }
+  </script>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+
+    function RClosed() {
+      alert("Online Registrations are closed Offline Registration will be Open from 25-04-2024 ")
+    }
+
+    function RClosed1() {
+      alert("Registrations Closed")
+    }
+
+    function tm6() {
+      document.getElementById("tm6").innerHTML = `<div style="flex: 1; cursor: pointer"> Click Here </div>`;
+    }
+  </script>
+
+</body>
+
+</html>
